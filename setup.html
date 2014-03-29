@@ -8,21 +8,24 @@
 <h2>Setting your name and email</h2>
 <p>Before using Git on any system for the first time, it is a good idea to set your name and email address, since Git will include this information in each commit message you author.  Follow these steps:</p>
 <ol>
-<li>Set your name by using this command:<br/><code>$ git config --global user.name "&lt;Your Name&gt;"</code></li>
-<li>Set your email as follows:<br/><code>$ git config --global user.email &lt;your_email_address&gt;</code></li>
+<li>Set your name by using this command:
+	<br/><code>$ git config --global user.name "&lt;Your Name&gt;"</code></li>
+<li>Set your email as follows:
+	<br/><code>$ git config --global user.email &lt;your_email_address&gt;</code></li>
 </ol>
 
 <h2>If you plan to develop on the CS systems</h2>
 <p>If you intend to write your code on the department's systems (e.g. while connected via SSH), all you need to do is initialize a standard Git repository.  To do this, follow these steps.</p>
 <ol>
-<li>Make sure you've set your name and email, as detailed in the above section.  To check, look for this information in the output of the command:<br/><code>$ git config --global -l</code></li>
+<li>Make sure you've set your name and email, as detailed in the above section.  To check, look for this information in the output of the command:
+	<br/><code>$ git config --global -l</code></li>
 <li>Move into the folder where you keep your work for the course, for example by running the command:
 	<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
 <li>Create a repository in a new folder of your choice.  For instance, to create one called <code>Lab1</code>, run:
 	<br/><code>$ git init Lab1</code></li>
 <li>To check that your repository was successfully created, use the following command to list the contents of the current directory:
 	<br/><code>$ ls -a</code>
-<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
+	<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
 </ol>
 
 <h2>If you plan to develop on your own machine</h2>
@@ -40,7 +43,7 @@
 	<br/><code>$ git clone <your-username>@glados.cs.rit.edu:Courses/CS/CS1/Labs/Lab1</code></li>
 <li>To check that your repository was successfully created, use the following command to list the contents of the current directory:
 	<br/><code>$ ls -a</code>
-<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
+	<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
 </ol>
 
 </body>
