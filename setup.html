@@ -16,20 +16,31 @@
 <p>If you intend to write your code on the department's systems (e.g. while connected via SSH), all you need to do is initialize a standard Git repository.  To do this, follow these steps.</p>
 <ol>
 <li>Make sure you've set your name and email, as detailed in the above section.  To check, look for this information in the output of the command:<br/><code>$ git config --global -l</code></li>
-<li>Move into the folder where you keep your work for the course, for example by running the command:<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
-<li>Create a repository in a new folder of your choice.  For instance, to create one called <code>Lab1</code>, run:<br/><code>$ git init Lab1</code></li>
+<li>Move into the folder where you keep your work for the course, for example by running the command:
+	<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
+<li>Create a repository in a new folder of your choice.  For instance, to create one called <code>Lab1</code>, run:
+	<br/><code>$ git init Lab1</code></li>
+<li>To check that your repository was successfully created, use the following command to list the contents of the current directory:
+	<br/><code>$ ls -a</code>
+<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
 </ol>
 
 <h2>If you plan to develop on your own machine</h2>
 <p>If you intend to write your code on your own system, create an upstream on the CS systems and clone it to a standard Git repository on your own machine.  This is done as follows:</p>
 <ol>
-<li>Working on a CS department system, move into the folder where you keep your work for the course, for example by running the command:<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
-<li>Create a bare repository in a new folder of your choice.  For instance, to create one called <code>Lab1.git</code>, run:<br/><code>$ git init --bare Lab1.git</code></li>
+<li>Working on a CS department system, move into the folder where you keep your work for the course, for example by running the command:
+	<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
+<li>Create a bare repository in a new folder of your choice.  For instance, to create one called <code>Lab1.git</code>, run:
+	<br/><code>$ git init --bare Lab1.git</code></li>
 <li>On your own system, download Git from the project website at <a href="http://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a> and install the package</li>
-<li>If you're on a Windows system, locate and launch the newly-installed application called <code>Git Bash</code>; otherwise, simply open a terminal (e.g. on Mac OS X, click the magnifying glass in the top right corner of the screen and type Terminal).</li>
-<li>In the terminal you opened on your own system, make sure you've set your name and email, as detailed in the above section.  To check, look for this information in the output of the command:<br/><code>$ git config --global -l</code></li>
-<li>Still on your own system, move into the directory where you keep your coursework, for example:<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
-<li>Clone the repository you created earlier on the CS systems.  To do this for an upstream you called <code>Lab1.git</code>, run:<br/><code>$ git clone &lt;your_username&gt;@glados.cs.rit.edu:Courses/CS/CS1/Labs/Lab1</code></li>
+<li>If you're on a Windows system, locate and launch the newly-installed application called <code>Git Bash</code>; otherwise, simply open a terminal (e.g. on Mac OS X, click the magnifying glass in the top right corner of the screen and type "Terminal").</li>
+<li>In the terminal on your own system, move into the directory where you keep your coursework, for example:
+	<br/><code>$ cd ~/Courses/CS/CS1/Labs</code></li>
+<li>Clone the repository you created earlier on the CS systems.  To do this for an upstream you called Lab1.git, run:
+	<br/><code>$ git clone <your-username>@glados.cs.rit.edu:Courses/CS/CS1/Labs/Lab1</code></li>
+<li>To check that your repository was successfully created, use the following command to list the contents of the current directory:
+	<br/><code>$ ls -a</code>
+<br/>and look for the hidden <code>.git</code> folder.  This folder identifies the directory as a Git repository.</li>
 </ol>
 
 </body>
