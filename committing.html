@@ -9,32 +9,104 @@
 <p>A Git repository consists of a working directory (the folder itself and its contained regular files, which can be modified using regular programs); a staging area (also called the index) where you collect changes in preparation for creating a commit; and a tree of commits, each of which represents a set of related changes to the project.  In order to commit a set of changes, you must first add them to the index and then perform a commit.</p>
 
 <h2>Querying status</h2>
-<!--TODO: This section should address the status command-->
+<!-- This section addresses the status command. -->
 <p>When using Git, if you are ever unsure of the state of your working directory relative to the master branch, the <code>status</code> command can be extremely informative.</p>
 <p>For example, at this point in the project, nothing has been done.  Let's do a small experiment to demonstrate the usefulness of the <code>status</code> command!</p>
 <ol>
-<li>To create a file for our commit (in this case, the generic file <code>file1.java</code>), run:
-	<br/><code>$ touch file1.java</code></li>
+<li>To create a file for our commit (in this case, the generic file <code>file1.txt</code>), run:
+	<br/><code>$ touch file1.txt</code></li>
 <li>To ensure the file was successfully created, run:
 	<br/><code>$ ls</code>
-	<br/>You should find <code>file1.java</code> in the list of files.</li>
+	<br/>You should find <code>file1.txt</code> in the list of files.</li>
 <li>Now that we have a file for our first commit, let's first check the status of our repo:
 	<br/><code>$ git status</code> </li>
 <li>This should yield the following output:
-	<br/><code>$ (TODO: OUTPUT)</code> </li>
-<li>This means that .... (TODO: EXPLANATION).<code></code> </li>
+	<table><tr><td>
+	<code># On branch master</code>
+	<br/><code># </code>
+	<br/><code># Initial commit</code>
+	<br/><code># </code>
+	<br/><code># Untracked files:</code>
+	<br/><code># 	(use "git add &lt;file&gt;..." to include in what will be committed)</code>
+	<br/><code># </code>
+	<br/><code># 		file1.txt</code>
+	<br/><code>nothing added to commit but untracked files present (use "git add" to track)</code>
+	</td></tr></table> </li>
+<li>This means that our current working directory is (Sol... put your words here).  However, there are files in our working directory that are not being "tracked" and are not staged to be included in the next commit.</li>
 <li>In order to fix this issue, we will have to learn how to stage/track files.</li>
 </ol>
 
 <h2>Tracking files</h2>
-<!--TODO: This section will discuss adding new files to the index-->
+<!--This section discusses adding new files to the index. -->
+<p>Before we can make any commits, we need to tell Git which files we want to include.  To do this, for each file that we want to be version-controlled, we must <code>add</code> it to the holding area for ready-to-commit files (aka the "index" or staging area).</p>
+<ol>
+	<li>We want to commit our new file called <code>file1.txt</code>, so let's add it to the commit!  You can do this with the following command:
+		<br/><code>$ git add file1.txt</code></li>
+	<li>To check if it worked, we will use the <code>status</code> tool again:
+		<br/><code>$ git status</code></li>
+	<li>This time, the output generated is different:
+	<table><tr><td>
+	<code># On branch master</code>
+	<br/><code># </code>
+	<br/><code># Initial commit</code>
+	<br/><code># </code>
+	<br/><code># Changes to be committed:</code>
+	<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+	<br/><code># </code>
+	<br/><code># 		new file: file1.txt</code>
+	<br/><code># </code>
+	</td></tr></table> </li>
+	<li>Note that Git now sees our "newly-added" file.</li>
+	<li>But wait!  I actually want to change the contents of <code>file1.txt</code>, but I already added it to the commit!  We can fix this issue after we make the desired changes to the file, simply by "updating" the version of the file that has already been added to the commit.</li>
+</ol>
 
 <h2>Updating files</h2>
 <!--TODO: This section will discuss re-adding modified files-->
+<p>When working with version-controlled files, it is common to suddenly remember something you wanted to do to a file before committing it, but you already added it to the commit!  Worry not; this is a very easy fix.</p>
+<p>We want to make a slight change to <code>file1.txt</code> and then make a commit with the most up-to-date version.</p>
+<ol>
+	<li>Open <code>file1.txt</code> in your favorite text editor, and add some text of your choice.  Save the file and return to the terminal window.</li>
+	<li>Now what? The <code>status</code> command can give us a hint:
+		<br/><code>$ git status</code></li>
+	<li>Now, we see that there are two different versions of <code>file1.txt</code> to choose from:
+	<table><tr><td>
+	<code># On branch master</code>
+	<br/><code># </code>
+	<br/><code># Initial commit</code>
+	<br/><code># </code>
+	<br/><code># Changes to be committed:</code>
+	<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+	<br/><code># </code>
+	<br/><code># 		new file: file1.txt</code>
+	<br/><code># </code>
+	<br/><code># Changes not staged for commit:</code>
+	<br/><code># 	(use "git add &lt;file&gt;..." to update what will be committed)</code>
+	<br/><code># 	(use "git checkout --&lt;file&gt;..." to discard changes in working directory)</code>
+	<br/><code># </code>
+	<br/><code># 		modified: file1.txt</code>
+	<br/><code># </code>
+	</td></tr></table> </li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
 
 <h2>Making commits</h2>
 <!--TODO: It's obvious what this section will discuss-->
 <!--This is the point at which you should submit your work for grading!-->
+<p></p>
+<ol>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
 
 <h2>Viewing diffs</h2>
 <!--TODO: All sorts of diffs should go here-->
