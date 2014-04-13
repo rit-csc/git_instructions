@@ -8,15 +8,20 @@
 <h2>"I have made a grave error.  How do I reset everything??"</h2>
 <p>There are two possible courses of action, depending on your needs:
 	<ul>
-		<li>If you want to keep the changes you've made since you're last commit, you can unstage everything:
+		<li>If you want to keep the changes you've made
+			since you're last commit, you can unstage everything:
 			<br/><code>$ git reset</code></li>
-		<li>If you want to discard your changes and start fresh, simply revert everything to the last commit:
+		<li>If you want to discard your changes and start fresh,
+			simply revert everything to the last commit:
 			<br/><code>$ git reset --hard</code></li>
 	</ul>
 </p>
 
-<h2>"When I commit, Git drops me to a scary editor with no on-screen help! How do I get out?"</h2>
-<p>It's likely that your default text editor is set to some sort of <code>vi</code> implementation.  To do your thing and get out, follow these steps:
+<h2>"When I commit, Git drops me to a scary editor with no on-screen help!
+	How do I get out?"</h2>
+<p>It's likely that your default text editor is set to some sort of
+	<code>vi</code> implementation.  To do your thing and get out,
+	follow these steps:
 	<ol>
 		<li>Press the <code>"i"</code> key.</li>
 		<li>Type your commit message.</li>
@@ -26,18 +31,26 @@
 	</ol>
 </p>
 
-<h2>"I tried to commit, but I got <code>Aborting commit due to empty commit message</code>.  Huh?"</h2>
-<p>When Git expected you to provide some sort of commit message, ie: "Init commit", you probably made one of the following errors:
+<h2>"I tried to commit, but I got <code>Aborting commit
+	due to empty commit message</code>.  Huh?"</h2>
+<p>When Git expected you to provide some sort of commit message,
+	ie: "Init commit", you probably made one of the following errors:
 	<ul>
 		<li>failed to enter anything</li>
 		<li>quit the text editor without saving</li>
 	</ul>
 </p>
-<p>The index and working directory have been left intact, but you will have to repeat the <code>commit</code> operation.  This time, be sure to enter a commit message and save before quiting.
+<p>The index and working directory have been left intact,
+	but you will have to repeat the <code>commit</code> operation.
+	This time, be sure to enter a commit message and save before quiting.
 </p>
 
-<h2>"When I commit, Git complains <code>nothing to commit (working directory clean)</code>.  What did I do wrong?"</h2>
-<p>This error indicates that none of the tracked files have been modified.  Make sure you've saved all of the files you've changed and called <code>git add</code> on all of the files you want to include in the commit.</p>
+<h2>"When I commit, Git complains <code>nothing to commit
+	(working directory clean)</code>.  What did I do wrong?"</h2>
+<p>This error indicates that none of the tracked files have been modified.
+	Make sure you've saved all of the files you've changed and called
+	<code>git add</code> on all of the files you want to include in the commit.
+</p>
 
 <h2>"How do I rename a tracked file?"</h2>
 <p>Git has a command for this:
