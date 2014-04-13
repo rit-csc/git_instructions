@@ -128,19 +128,19 @@
 		<br/><code># 		modified: file1.txt</code>
 		<br/><code># </code>
 	</li>
-	<li>We must decide how we want to proceed from these two options:
+	<li>We must decide whether we want to include these new changes in our next commit:
 		<ol type="a">
-			<li>Update the version in the stage to reflect the changes:
+			<li>If we do want to commit these changes with our earlier ones, we must update the version in the stage to reflect the new ones:
 				<ul>
-					<li>Re-add the file to the stage, including the changes:
+					<li>To re-add the file to the stage:
 						<br/><code>$ git add file1.txt</code>
 					</li>
 				</ul>
 			</li>
-			<li>Discard the changes and keep the previous version
-				for your commit:
+			<li>If we only want to commit the first set of changes we made, we should just skip re-adding the file.</li>
+			<li>If we no longer want the new changes at all, we can permanently discard them:
 				<ul>
-					<li>Discard the changes made to <code>file1.txt</code> after it was added to the stage:
+					<li>To discard the changes made to <code>file1.txt</code> after it was last added to the stage:
 						<br/><code>$ git checkout -- file1.txt</code>
 					</li>
 				</ul>
@@ -231,7 +231,7 @@
 		<ol>
 			<li>For example, to save your commit history in a file
 				called <code>log_file.txt</code>, use the following command:
-				<br/><code>$ git log > log_file.txt</code>
+				<br/><code>$ git log &gt; log_file.txt</code>
 			</li>
 			<li>If you open this file in your preferred text editor,
 				you'll see that all past commits
