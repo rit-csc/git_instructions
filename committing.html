@@ -68,7 +68,7 @@
 	<li>Open <code>file1.txt</code> in your favorite text editor, and add some text of your choice.  Save the file and return to the terminal window.</li>
 	<li>Now what? The <code>status</code> command can give us a hint:
 		<br/><code>$ git status</code></li>
-	<li>Now, we see that there are two different versions of <code>file1.txt</code> to choose from:
+	<li>Now, we see that there are two different versions of <code>file1.txt</code> that have not been committed, the version in the stage and the one in our current working directory:
 	<table><tr><td>
 	<code># On branch master</code>
 	<br/><code># </code>
@@ -86,11 +86,37 @@
 	<br/><code># 		modified: file1.txt</code>
 	<br/><code># </code>
 	</td></tr></table> </li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li>We must decide how we want to proceed from these two options:
+		<ol type="a">
+			<li>Update the version in the stage to reflect the changes you have made:
+				<ul>
+					<li>Re-add the file to the stage, including the changes:
+						<br/><code>$ git add file1.txt</code></li>
+				</ul>
+			</li>
+			<li>Discard the changes you made and keep the previous version for your commit:
+				<ul>
+					<li>Discard the changes made to <code>file1.txt</code> after it was added to the stage:
+						<br/><code>$ git checkout -- file1.txt</code></li>
+				</ul>
+			</li>
+		</ol>
+	</li>
+	<li>Just to double check that everything is as it should be:
+		<br/><code>$ git status</code></li>
+	<li>Observe the following output:
+		<table><tr><td>
+			<code># On branch master</code>
+			<br/><code># </code>
+			<br/><code># Initial commit</code>
+			<br/><code># </code>
+			<br/><code># Changes to be committed:</code>
+			<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+			<br/><code># </code>
+			<br/><code># 		new file: file1.txt</code>
+			<br/><code># </code>
+		</td></tr></table></li>
+	<li>Now we're ready to make our first commit!</li>
 </ol>
 
 <h2>Making commits</h2>
