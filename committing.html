@@ -21,7 +21,6 @@
 <li>Now that we have a file for our first commit, let's first check the status of our repo:
 	<br/><code>$ git status</code> </li>
 <li>This should yield the following output:
-	<table><tr><td>
 	<code># On branch master</code>
 	<br/><code># </code>
 	<br/><code># Initial commit</code>
@@ -31,7 +30,7 @@
 	<br/><code># </code>
 	<br/><code># 		file1.txt</code>
 	<br/><code>nothing added to commit but untracked files present (use "git add" to track)</code>
-	</td></tr></table> </li>
+</li>
 <li>This means that our current working directory is (Sol... put your words here).  However, there are files in our working directory that are not being "tracked" and are not staged to be included in the next commit.</li>
 <li>In order to fix this issue, we will have to learn how to stage/track files.</li>
 </ol>
@@ -45,47 +44,45 @@
 	<li>To check if it worked, we will use the <code>status</code> tool again:
 		<br/><code>$ git status</code></li>
 	<li>This time, the output generated is different:
-	<table><tr><td>
-	<code># On branch master</code>
-	<br/><code># </code>
-	<br/><code># Initial commit</code>
-	<br/><code># </code>
-	<br/><code># Changes to be committed:</code>
-	<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-	<br/><code># </code>
-	<br/><code># 		new file: file1.txt</code>
-	<br/><code># </code>
-	</td></tr></table> </li>
+		<code># On branch master</code>
+		<br/><code># </code>
+		<br/><code># Initial commit</code>
+		<br/><code># </code>
+		<br/><code># Changes to be committed:</code>
+		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+		<br/><code># </code>
+		<br/><code># 		new file: file1.txt</code>
+		<br/><code># </code>
+	</li>
 	<li>Note that Git now sees our "newly-added" file.</li>
 	<li>But wait!  I actually want to change the contents of <code>file1.txt</code>, but I already added it to the commit!  We can fix this issue after we make the desired changes to the file, simply by "updating" the version of the file that has already been added to the commit.</li>
 </ol>
 
 <h2>Updating files</h2>
-<!--TODO: This section will discuss re-adding modified files-->
+<!-- This section discusses re-adding modified files prior to making a commit -->
 <p>When working with version-controlled files, it is common to suddenly remember something you wanted to do to a file before committing it, but you already added it to the commit!  Worry not; this is a very easy fix.</p>
 <p>We want to make a slight change to <code>file1.txt</code> and then make a commit with the most up-to-date version.</p>
 <ol>
 	<li>Open <code>file1.txt</code> in your favorite text editor, and add some text of your choice.  Save the file and return to the terminal window.</li>
 	<li>Now what? The <code>status</code> command can give us a hint:
 		<br/><code>$ git status</code></li>
-	<li>Now, we see that there are two different versions of <code>file1.txt</code> that have not been committed, the version in the stage and the one in our current working directory:
-	<table><tr><td>
-	<code># On branch master</code>
-	<br/><code># </code>
-	<br/><code># Initial commit</code>
-	<br/><code># </code>
-	<br/><code># Changes to be committed:</code>
-	<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-	<br/><code># </code>
-	<br/><code># 		new file: file1.txt</code>
-	<br/><code># </code>
-	<br/><code># Changes not staged for commit:</code>
-	<br/><code># 	(use "git add &lt;file&gt;..." to update what will be committed)</code>
-	<br/><code># 	(use "git checkout --&lt;file&gt;..." to discard changes in working directory)</code>
-	<br/><code># </code>
-	<br/><code># 		modified: file1.txt</code>
-	<br/><code># </code>
-	</td></tr></table> </li>
+	<li>Now, we see that there are two different versions of <code>file1.txt</code> that have not been committed: the version in the stage (unchanged) and the one in our current working directory (changed).
+		<code># On branch master</code>
+		<br/><code># </code>
+		<br/><code># Initial commit</code>
+		<br/><code># </code>
+		<br/><code># Changes to be committed:</code>
+		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+		<br/><code># </code>
+		<br/><code># 		new file: file1.txt</code>
+		<br/><code># </code>
+		<br/><code># Changes not staged for commit:</code>
+		<br/><code># 	(use "git add &lt;file&gt;..." to update what will be committed)</code>
+		<br/><code># 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code>
+		<br/><code># </code>
+		<br/><code># 		modified: file1.txt</code>
+		<br/><code># </code>
+	</li>
 	<li>We must decide how we want to proceed from these two options:
 		<ol type="a">
 			<li>Update the version in the stage to reflect the changes you have made:
@@ -105,17 +102,16 @@
 	<li>Just to double check that everything is as it should be:
 		<br/><code>$ git status</code></li>
 	<li>Observe the following output:
-		<table><tr><td>
-			<code># On branch master</code>
-			<br/><code># </code>
-			<br/><code># Initial commit</code>
-			<br/><code># </code>
-			<br/><code># Changes to be committed:</code>
-			<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-			<br/><code># </code>
-			<br/><code># 		new file: file1.txt</code>
-			<br/><code># </code>
-		</td></tr></table></li>
+		<code># On branch master</code>
+		<br/><code># </code>
+		<br/><code># Initial commit</code>
+		<br/><code># </code>
+		<br/><code># Changes to be committed:</code>
+		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
+		<br/><code># </code>
+		<br/><code># 		new file: file1.txt</code>
+		<br/><code># </code>
+	</li>
 	<li>Now we're ready to make our first commit!</li>
 </ol>
 
@@ -124,18 +120,53 @@
 <!--This is the point at which you should submit your work for grading!-->
 <p></p>
 <ol>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li>We have already made sure that the stage accurately represents everyting that we want to include in our commit, so we are ready to go.</li>
+	<li>To make the commit, use the following command:
+		<br/><code>$ git commit</code></li>
+	<li>If you are working in the terminal, you will automatically be taken to your default text editor.  Enter the commit message "<code>init commit</code>", save the file, and exit.</li>
+	<li>The output produced will look something like this (possibly with a few small deviations):
+		<br/><code>[master (root-commit) 949b9f1] init commit</code>
+		<br/><code> 1 file changed, 1 insertion(+)</code>
+		<br/><code> create mode 100644 file1.txt</code></li>
+	<li>For the sake of knowledge, let's check our <code>status</code> again, now that the commit is complete:
+		<br/><code>$ git status</code></li>
+	<li>Observe the following output:
+		<br/><code># On branch master</code>
+		<br/><code>nothing to commit (working directory clean) </code></li>
+	<li>Success!</li>
 </ol>
+
+<h2>Viewing your commit history</h2>
+<!--TODO: information re: git log-->
+<p>If at any point in the progression of your project, you want to take a look at a history of all of your commits so far, Git has the perfect tool for you!</p>
+<ul>
+	<li>To briefly list all past commits (including corresponding commit messages) right there in the terminal window:
+		<ol>
+			<li>Issue the following command and enjoy:
+				<br/><code>$ git log --oneline</code></li>
+			<li>For example, after the above commit, the following log would be displayed:
+				<br/><code>949b9f1 init commit</code></li>
+			<li>If your log output is longer than the terminal window, you will need to press the "q" key to return to the command line.</li>
+		</ol>
+	</li>
+	<li>If your professor wants proof that you used version control (and allows the use of Git), you can pipe the verbose commit log into a file to optionally include in the submission of your work for grading.
+		<ol>
+			<li>For example, to save your commit history in a file called <code>log_file.txt</code>, use the following command:
+				<br/><code>$ git log > log_file.txt</code></li>
+			<li>If you open this file in your preferred text editor, you'll see that all past commits (including corresponding commit messages) are now documented.</li>
+		</ol>
+	</li>
+		
+</ul>
+
 
 <h2>Viewing diffs</h2>
 <!--TODO: All sorts of diffs should go here-->
+<p></p>
+<ol>
+	<li></li>
+	<li></li>
+</ol>
 
 </body>
 </html>
