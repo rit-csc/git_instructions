@@ -4,7 +4,7 @@
 </head>
 <body>
 
-<h1>Configuring Git for Eclipse</h1>
+<h2>Configuring Git for Eclipse</h2>
     
 <IMG BORDER=0 WIDTH=150 SRC="Media/Git.png">
 
@@ -72,8 +72,8 @@
         <li> Get the full path to your current directory:
             <br/><code>$ pwd</code>
         </li>
-        <li> Make sure to record the path!!
-            You will need it for the next few steps.
+        <li> <b>Make sure to record the path!!
+            You will need it for the next few steps.</b>
         </li>
         <li> Open Eclipse and connect to your Git repository:
             <ol type="a">
@@ -122,46 +122,61 @@
     </ol> 
 </p>
 
-<h3>Committing A Project to Git Repository</h3>
-        
-<!--  hidden todo ============================================
-    <center><IMG BORDER=0 WIDTH=300 SRC="Media/commit.jpg"></center>
-  ============================================ hidden todo -->
-<p>
+<!-- ====================================================================== -->
+
+<h2>Committing A Project to Git Repository</h2>
+
 <ol>
-  <li> Change back to the Eclipse Java perspective by doing: 
-      <p> Select <code>Window -> Open Perspective -> Java</code>.
-  <li> In the <code>Package Explorer</code> pane, right-click on any 
-      project folder and select 
-      <code>Team -> Share Project</code>.
-  <li>Select Git and click <code>Next</code>. 
-  <li> Select the repository you just created and click <code>Finish</code>.
-  <li> Right click on the project you just shared and select <code>Team -> Commit</code>.
-  <li> Enter a comment for the commit operation (i.e. 
-      <code>Initial revision.</code>), select the files you wish
-       to include, and click <code>Commit</code>.
-  <li> Right click on the project again and select <code>Team -> Push Branch</code>.
-  <li> Make a change to the project
-      and make a second commit of the file.
-  <li> This time, after selecting the files to commit, click <code>Commit and Push</code>.
-       From now on, whenever you want to send your changes to the remote repository, you
-       will want to use this button instead of the <code>Commit</code> button.
-  <li> On the file system, navigate to the <b>rit_git</b> folder 
-      where your program file resides and verify that the file is 
-      present and correct. This folder is where Eclipse
-      keeps its working copy of the version-controlled content. When
-      you commit through Eclipse, the commit uses this as the source
-      for a new version stored in the project's reposity folder under
-      $HOME/rit_git/.
+    <li>Change back to the Eclipse Java perspective by selecting 
+        <code>Window -> Open Perspective -> Java</code>
+    </li>
+    <li>In the <code>Package Explorer</code> pane, right-click on any
+        project folder and select <code>Team -> Share Project</code>.
+    </li>
+    <li>Select "Git" and then click <code>Next</code>. 
+    </li>
+    <li>Select the repository you just created
+        and then click <code>Finish</code>.
+    </li>
+    <li>Right click on the project you just shared
+        and select <code>Team -> Commit</code>.
+    </li>
+    <li>Enter a meaningful commit message (i.e. "Initial commit"),
+        select the files you wish to include in the commit,
+        and click <code>Commit</code>.
+    </li>
+    <li>Right click on the project again
+        and select <code>Team -> Push Branch</code>.
+    </li>
+    <li>Make a small change to the project
+        and make a second commit.
+    </li>
+    <li>This time, after selecting the files to commit,
+        click <code>Commit and Push</code>.
+        From now on, whenever you want to send your changes to the remote repository,
+        you need to use this button instead of the <code>Commit</code> button.
+    </li>
+    <li>Back in the terminal window,
+        navigate to the <code>rit_git</code> folder
+        where your program files reside and verify that the file you changed
+        is present and correct.
+        This folder is where Eclipse keeps its working copy of
+        the version-controlled content.
+        When you commit through Eclipse, the commit uses this as the source
+        for a new version stored in the project's reposity folder under 
+        <code>$HOME/rit_git/</code>.
+    </li>
 </ol>
 
- <b>Note: You should never attempt to add, modify or delete any files 
-    in the repository $HOME/rit_git/ because the git program may detect it
-    as corruption and refuse to fetch or recover your files!
- </b>
-<hr>
+<p><u>Note:</u> You should never attempt to add, modify, or delete any files
+    in the <code>$HOME/rit_git/</code> directory.
+    Doing so would make Git "detect" corruption
+    and refuse to fetch or recover your files!
+</p>
 
-<h3>Checking Out a Project from a Git Repository</h3>
+<!-- ====================================================================== -->
+
+<h2>Checking Out a Project from a Git Repository</h2>
 <p>
 The advantage of using a source code repository is that you can work on
 code on different machines while keeping everything synchronized.  Each 
