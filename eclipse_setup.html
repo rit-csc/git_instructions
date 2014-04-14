@@ -118,13 +118,13 @@ WinSCP, Secure copy file transfer program for MSWindows</a>
          </pre>
   <li> Enter the command sequence shown below.  In the illustration, the $ 
       is the prompt and the hash mark begins a comment extending to the end 
-      of the line; do not enter these parts.  The <tt>cvs</tt> and 
+      of the line; do not enter these parts.  The <tt>git</tt> and 
       <tt>pico</tt> commands are the CVS program and the pico editing 
       program respectively.
       <pre>
         $ <font color="darkgreen">cd</font>                        # go to home dir.
-        $ <font color="darkgreen">mkdir rit_git</font>             # create cvs repository directory
-        $ <font color="darkgreen">git init --bare rit_git</font>   # initialize cvs repository
+        $ <font color="darkgreen">mkdir rit_git</font>             # create git repository directory
+        $ <font color="darkgreen">git init --bare rit_git</font>   # initialize git repository
         $ <font color="darkgreen">mkdir -p .ssh</font>             # create .ssh dir. if non-existent
         $ <font color="darkgreen">pico .ssh/environment</font>     # edit environment file in .ssh dir.
          <font color="darkgreen">PATH=/opt/csw/bin:/usr/bin</font> # add line to file. Ctrl-X + Y to save
@@ -186,35 +186,35 @@ WinSCP, Secure copy file transfer program for MSWindows</a>
 </ol>
 
  <b>Note: You should never attempt to add, modify or delete any files 
-    in the repository $HOME/rit_git/ because the cvs program may detect it
+    in the repository $HOME/rit_git/ because the git program may detect it
     as corruption and refuse to fetch of recover your files!
  </b>
 <hr>
 
-<h3>Checking Out a Project from CVS</h3>
+<h3>Checking Out a Project from a Git Repository</h3>
 <p>
 The advantage of using a source code repository is that you can work on
 code on different machines while keeping everything synchronized.  Each 
-time you complete a coding session, commit your changes to the repository. 
+time you complete a coding session, commit and push your changes to the repository. 
 <p>
 If you go to a different machine you will either check out the project 
-(first time) or update it.  For example, you can start work on a lab 
-using a CS machine, check it in, and then go home and check out the 
+(first time) or pull changes from the repository.  For example, you can start work on a lab 
+using a CS machine, commit and push your changes, and then go home and check out the 
 project on your own machine to continue work there - even if you use a 
 different operating system!
 <p>
 <ul>
   <li> To check out a project for the first time in Eclipse, select 
-      <tt>Window -> Open Perspective -> Other -> CVS Repository Exploring</tt>.
-      In the <tt>CVS Repositories</tt> pane turn the arrow for the 
-      repository icon and the <tt>HEAD</tt> down.  This will reveal all 
+      <tt>Window -> Open Perspective -> Other -> Git</tt>.
+      In the <tt>Git Repositories</tt> pane turn the arrow for the 
+      repository icon and the <tt>Working Directory</tt> down.  This will reveal all 
       of your projects in the repository.  Right-click on the project 
-      you want and select <tt>Check Out</tt>.</li> 
+      you want and select <tt>Import Projects</tt>.</li> 
       <p> ... OR ... 
   <li> To update a project within Eclipse that is already checked out 
-      from CVS, right-click on the project folder in the 
+      from Git, right-click on the project folder in the 
       <tt>Package Explorer</tt> perspective and select 
-      <tt>Team -> Update</tt>.</li>
+      <tt>Team -> Pull</tt>.</li>
 </ul>
 <p>
 <hr>
