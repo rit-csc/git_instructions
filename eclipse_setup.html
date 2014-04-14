@@ -1,88 +1,5 @@
 <html>
-<h2>Setting up Eclipse</h2>
-    
-<p>
-  If you have used Eclipse before, you may skip the installation.
-  If you have not built and run a <b>Java program</b> under Eclipse,
-  you should do the section on &quot;Using Eclipse for Java&quot;. 
-  Then you may proceed to configure Git, learn how to use 
-  Git as a  version controlling system with Eclipse and start the programming assignments.
-</p>
-
-<h3>Installing Eclipse</h3>
-
-<p>
-  Before installing, watch the 
-  <a href="Media/eclipse.mov" target="_blank">instructional video</a>
-  on setting up your environment.  <b>The video describes installing a
-  previous version of Eclipse. Some aspects of the installation may be
-  different than depicted in the video.</b>
-  Note that the video refers to the machine named <code>holly.cs.rit.edu</code> 
-  which no longer exists; instead you can use other department Linux machines 
-  such as <code>glados.cs.rit.edu</code>.
-  What follows are the details of the 
-  installation and initial configuration. 
-  Note: To avoid congestion, you may want to use one of the lab Linux
-  machines instead of <code>glados.cs.rit.edu</code>. There are over 
-  40 lab machines available - all of them can be used remotely.
-  (This document will use the machine <code>glados.cs.rit.edu</code>.)<br><br>
-  <IMG BORDER=0 WIDTH=75 SRC="Media/eclipse.png">
-</p>
-
-<p>
-  If you are installing Eclipse on <b>your own machine</b>, download and 
-  install <a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse Standard</a>.
-</p>
-<p>
-  After the installation, you will have a workspace directory on your machine. 
-  The workspace directory will hold all of your Eclipse software development 
-  project files during development.
-</p>
-
-<h3>Using Eclipse for Java</h3>
-<p>
-  If you have been using Eclipse for another language, such as Python,
-  switch to the Java perspective. 
-  Select <code>Window -> Open Perspective -> Java</code>.
-</p>
-<p>Note that you can always see what perspective you are currently in
-  by looking in the upper-right part of the Eclipse window.
-</p>
-
-<h4>Create a <code>Hello</code> project</h4>
-<ol>
-  <li> Launch Eclipse and create a new 
-      Java project, <code>File -> New -> Java Project</code> and enter the 
-      following information:
-      <pre> Project Name: <font color="darkgreen">Hello</font> </pre>
-  </li>
-    
-  <li> Create a <code>HelloWorld.java</code> program.  In the 
-      <code>Package Explorer</code> pane right-click on the <code>Hello</code> 
-      folder and select <code>New -> Class</code>.  Enter the following 
-      information and then click <code>Finish</code>.
-      <pre>
-        Enter <font color="darkgreen">HelloWorld</font> next to "Name:"
-        Check the box next to "public static void main(String[] args):"
-        Check the box next to "Generate comments:"
-      </pre>
-  </li>
-  <li> Modify the resulting <code>HelloWorld.java</code> file in the Eclipse
-      editor to make it look like 
-      <a href="Supplied/HelloWorld.java" target="_blank">this file</a>.
-  </li>
-</ol>
-
-<h4>Run the program</h4>
-<ol>
-  <li>In <code>Package Explorer</code> pane, right-click 
-      on <code>Hello.java</code> and select <code>Run As -> Java Application</code>.
-  </li>
-  <li> Verify the output in the <code>Console</code> window.
-  </li>
-</ol>
-   
-<h3>Configuring Git</h3>
+<h3>Configuring Git for Eclipse</h3>
     
 <IMG BORDER=0 WIDTH=150 SRC="Media/Git.png">
 <p>
@@ -189,8 +106,8 @@
 <ol>
   <li> Change back to the Eclipse Java perspective by doing: 
       <p> Select <code>Window -> Open Perspective -> Java</code>.
-  <li> In the <code>Package Explorer</code> pane, right-click on the 
-      <code>Hello</code> project folder and select 
+  <li> In the <code>Package Explorer</code> pane, right-click on any 
+      project folder and select 
       <code>Team -> Share Project</code>.
   <li>Select Git and click <code>Next</code>. 
   <li> Select the repository you just created and click <code>Finish</code>.
@@ -199,7 +116,7 @@
       <code>Initial revision.</code>), select the files you wish
        to include, and click <code>Commit</code>.
   <li> Right click on the project again and select <code>Team -> Push Branch</code>.
-  <li> Add an additional print statement in <code>HelloWorld.java</code> 
+  <li> Make a change to the project
       and make a second commit of the file.
   <li> This time, after selecting the files to commit, click <code>Commit and Push</code>.
        From now on, whenever you want to send your changes to the remote repository, you
