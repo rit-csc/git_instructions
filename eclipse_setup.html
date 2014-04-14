@@ -1,93 +1,125 @@
 <html>
-<h3>Configuring Git for Eclipse</h3>
+<head>
+<title>RIT CS Git Tutorial | Eclipse</title>
+</head>
+<body>
+
+<h1>Configuring Git for Eclipse</h1>
     
 <IMG BORDER=0 WIDTH=150 SRC="Media/Git.png">
-<p>
-  You may find some of the following UNIX Documentation links useful:
-  <ul>
-    <li>
-      <a href="References/unixRefCard.html" target="_blank">UNIX Reference Card</a>
-    </li>
-    <li>
-      <a href="http://www.cs.rit.edu/~f2y-grd/beg-guide.pdf " target="_blank">
-      CS Dept. Introduction to UNIX PDF</a>
-    </li>
-    <li>
-      <a href=" http://info.ee.surrey.ac.uk/Teaching/Unix/ " target="_blank">
-      Michael Stonebank's 2001 UNIX tutorial</a> is useful and widely available.
-    </li>
-    <li>
-      <a href=" http://winscp.net/ " target="_blank">
-      WinSCP, Secure copy file transfer program for MSWindows</a>
-    </li>
-    <li> Search the internet for &quot;xming&quot; if you are a PC user.  
-        The xming facility adds XWindows capabilities to your PC.  XWindows 
-        is the X11 windows server and toolkit developed over many years at 
-        <b>MIT</b>, and it allows you to run a <code>GUI</code> program remotely.
-    </li>
-  </ul>
 
-  <ol>
-    <li> Log in to a CS system.  
-        <p>If you are in a lab and sitting in front of a Linux machine or 
-           a Mac, just open a terminal.
-         </p>
-        <p> If you are using your own Linux or Mac machine, the <code>ssh</code>
-           program is a secure, remote login shell program. Open a terminal
-           and in the shell type the following,
-           where <code>{username}</code> is your CS username:
-           <pre>
-           $ <font color="darkgreen">ssh -Y {username}@glados.cs.rit.edu</font>
-           </pre>  
-         </p>
-        <p> On Windows machines, install (only if using your own machine) and 
-           then run <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">PuTTY</a>.
-           Under the <code>Session</code> category enter the following and click
-       <code>Open</code>.
-           <pre>
-             <font color="darkgreen">Host Name: glados.cs.rit.edu</font>
-           </pre>
-         </p>
-    </li>
-    <li> Enter the command sequence shown below.  In the illustration, the $ 
-        is the prompt and the hash mark begins a comment extending to the end 
-        of the line; do not enter these parts.  The <code>git</code> and 
-        <code>pico</code> commands are the CVS program and the pico editing 
-        program respectively.
-        <pre>
-          $ <font color="darkgreen">cd</font>                        # go to home dir.
-          $ <font color="darkgreen">mkdir rit_git</font>             # create git repository directory
-          $ <font color="darkgreen">git init --bare rit_git</font>   # initialize git repository
-          $ <font color="darkgreen">mkdir -p .ssh</font>             # create .ssh dir. if non-existent
-          $ <font color="darkgreen">pico .ssh/environment</font>     # edit environment file in .ssh dir.
-           <font color="darkgreen">PATH=/opt/csw/bin:/usr/bin</font> # add line to file. Ctrl-X + Y to save
-          $ <font color="darkgreen">pwd</font>                       <b><font color="darkred"># record full path for next step</font></b>
-        </pre>
-    </li>
-    <li> Go to Eclipse and connect to your Git repository.  Select 
-        <code>Window -> Open Perspective -> Other -> Git</code>.
-        Click the drop-down arrow in the top right corner of the <code>Git Repositories</code> pane and select 
-        <code>Clone a Repository</code>.  Enter the following information 
-        and click <code>Finish</code>. When prompted, enter your CS password. 
-        <p>
-        Note: <code>{path_from_pwd}</code> is the string returned by the 
-        <code>pwd</code> command, and <code>{username}</code> and <code>{password}</code> 
-        are your CS credentials.
-      </p>
-        <p>
-        Note: If asked about creating a <code>.ssh/known_hosts</code> file,
-        agree to it.
-        <pre> 
-          Host: <font color="darkgreen">glados.cs.rit.edu</font>
-          Repository Path: <font color="darkgreen">{path_from_pwd}/rit_git</font>
-          User: <font color="darkgreen">{username}</font>
-          Password: <font color="darkgreen">{password}</font>
-          Connection type: <font color="darkgreen">ssh</font>
-          <font color="darkgreen">select checkbox for</font> "Store in Secure Store"
-        </pre>
-      </p>
-    </li>
-  </ol> 
+<p> Many of the introductory CS courses recommend the use of Eclipse.
+    Luckily, Eclipse can be easily configured to work with your existing
+    Git repository!
+</p>
+<p> To access your Git repository through Eclipse, follow the following steps
+    <u>exactly</u>:
+    <ol>
+        <li> If you are working on a CS system, open up a terminal window.
+        </li>
+        <li> If you are on your personal machine, choose the appropriate 
+            course of action:
+            <ul>
+                <li>Linux or Mac machine:
+                    <ol>
+                        <li> Open the terminal window.
+                        </li>
+                        <li> SSH into a CS system with the following command:
+                            <br/><code>$ ssh {your_username}@glados.cs.rit.edu</code>
+                        </li>
+                        <li> Enter your CS password when prompted.
+                        </li>
+                    </ol>
+                </li>
+                <li>Windows machine:
+                    <ol>
+                        <li> Launch <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">PuTTY</a>.
+                        </li>
+                        <li> In the "Host Name" box, put
+                            <code>{your_username}@glados.cs.rit.edu</code>
+                        </li>
+                        <li> Click "Open".
+                        </li>
+                        <li> Enter your CS password when prompted.
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li> Navigate to your home directory:
+            <br/><code>$ cd</code>
+        </li>
+        <li> Create a directory that will become the Git repository:
+            <br/><code>$ mkdir rit_git</code>
+        </li>
+        <li> Initialize the Git repository:
+            <br/><code>$ git init --bare rit_git</code>
+        </li>
+        <li> Create a <code>.ssh</code> directory
+            (if one does not already exist):
+            <br/><code>$ mkdir -p .ssh</code>
+        </li>
+        <li> Use the <code>vi</code> text editor
+            to edit the "environment" file in the <code>.ssh</code> directory:
+            <br/><code>$ vi .ssh/environment</code>
+        </li>
+        <li> Press "<code>i</code>" and enter the following line:
+            <br/><code>PATH=/opt/csw/bin:/usr/bin</code>
+        </li>
+        <li> Press <code>esc</code>, type "<code>:wq</code>",
+            and press <code>enter</code>.
+        </li>
+        <li> Get the full path to your current directory:
+            <br/><code>$ pwd</code>
+        </li>
+        <li> Make sure to record the path!!
+            You will need it for the next few steps.
+        </li>
+        <li> Open Eclipse and connect to your Git repository:
+            <ol type="a">
+                <li>Select <code>Window -> Open Perspective -> Other -> Git
+                    </code>.
+                </li>
+                <li> Click the drop-down arrow in the top-right corner of
+                    the <code>Git Repositories</code> pane and select 
+                    <code>Clone a Repository</code> from the list of options.
+                </li>
+                <li> Enter the following information and
+                    then click <code>Finish</code>:
+                    <table cellspacing=10>
+                        <tr>
+                            <td>
+                                Host: 
+                                <br/>Repository Path: 
+                                <br/>User: 
+                                <br/>Password: 
+                                <br/>Connection Type: 
+                            </td>
+                            <td>
+                                <code>glados.cs.rit.edu</code> 
+                                <br/><code>{path_from_pwd}/rit_git</code>
+                                <br/><code>{CS_username}</code>
+                                <br/><code>{CS_password}</code>
+                                <br/><code>ssh</code>
+                            </td>
+                        </tr>
+                    </table>
+                    (select checkbox for <code>"Store in Secure Store"</code>)
+                    <p>
+                        <u>Note:</u> Replace <code>{path_from_pwd}</code> with
+                        the string returned by the <code>pwd</code> command,
+                        and <code>{CS_username}</code>
+                        and <code>{CS_password}</code>
+                        with your CS credentials.
+                    </p>
+                    <p>
+                        <u>Note:</u> If asked about creating a
+                        <code>.ssh/known_hosts</code> file, agree to it.
+                    </p>
+                </li>
+            </ol>
+        </li>
+    </ol> 
 </p>
 
 <h3>Committing A Project to Git Repository</h3>
@@ -125,7 +157,7 @@
 
  <b>Note: You should never attempt to add, modify or delete any files 
     in the repository $HOME/rit_git/ because the git program may detect it
-    as corruption and refuse to fetch of recover your files!
+    as corruption and refuse to fetch or recover your files!
  </b>
 <hr>
 
@@ -156,4 +188,6 @@ different operating system!
 </ul>
 <p>
 <hr>
+
+</body>
 </html>
