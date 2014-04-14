@@ -2,155 +2,183 @@
 <h2>Setting up Eclipse</h2>
     
 <p>
-If you have used Eclipse before, you may skip the installation.
-If you have not built and run a <b>Java program</b> under Eclipse,
-you should do the section on &quot;Using Eclipse for Java&quot;. 
-Then you may proceed to configure Git, learn how to use 
-Git as a  version controlling system with Eclipse and start the programming assignments.
+  If you have used Eclipse before, you may skip the installation.
+  If you have not built and run a <b>Java program</b> under Eclipse,
+  you should do the section on &quot;Using Eclipse for Java&quot;. 
+  Then you may proceed to configure Git, learn how to use 
+  Git as a  version controlling system with Eclipse and start the programming assignments.
+</p>
 
 <h3>Installing Eclipse</h3>
-    
-Before installing, watch the 
-<a href="Media/eclipse.mov" target="_blank">instructional video</a>
-on setting up your environment.  <b>The video describes installing a
-previous version of Eclipse. Some aspects of the installation may be
-different than depicted in the video.</b>
-Note that the video refers to the machine named <code>holly.cs.rit.edu</code> 
-which no longer exists; instead you can use other department Linux machines 
-such as <code>glados.cs.rit.edu</code>.
-What follows are the details of the 
-installation and initial configuration. 
-Note: To avoid congestion, you may want to use one of the lab Linux
-machines instead of <code>glados.cs.rit.edu</code>. There are over 
-40 lab machines available - all of them can be used remotely.
-(This document will use the machine <code>glados.cs.rit.edu</code>.)<br><br>
-<center><IMG BORDER=0 WIDTH=75 SRC="Media/eclipse.png"></center>
 
 <p>
-If you are installing Eclipse on <b>your own machine</b>, download and 
-install <a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse Standard</a>.
+  Before installing, watch the 
+  <a href="Media/eclipse.mov" target="_blank">instructional video</a>
+  on setting up your environment.  <b>The video describes installing a
+  previous version of Eclipse. Some aspects of the installation may be
+  different than depicted in the video.</b>
+  Note that the video refers to the machine named <code>holly.cs.rit.edu</code> 
+  which no longer exists; instead you can use other department Linux machines 
+  such as <code>glados.cs.rit.edu</code>.
+  What follows are the details of the 
+  installation and initial configuration. 
+  Note: To avoid congestion, you may want to use one of the lab Linux
+  machines instead of <code>glados.cs.rit.edu</code>. There are over 
+  40 lab machines available - all of them can be used remotely.
+  (This document will use the machine <code>glados.cs.rit.edu</code>.)<br><br>
+  <IMG BORDER=0 WIDTH=75 SRC="Media/eclipse.png">
+</p>
+
 <p>
-After the installation, you will have a workspace directory on your machine. 
-The workspace directory will hold all of your Eclipse software development 
-project files during development.
+  If you are installing Eclipse on <b>your own machine</b>, download and 
+  install <a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse Standard</a>.
+</p>
 <p>
+  After the installation, you will have a workspace directory on your machine. 
+  The workspace directory will hold all of your Eclipse software development 
+  project files during development.
+</p>
 
 <h3>Using Eclipse for Java</h3>
-If you have been using Eclipse for another language, such as Python,
-switch to the Java perspective. 
 <p>
-Select <tt>Window -> Open Perspective -> Java</tt>.
+  If you have been using Eclipse for another language, such as Python,
+  switch to the Java perspective. 
+  Select <code>Window -> Open Perspective -> Java</code>.
+</p>
 <p>Note that you can always see what perspective you are currently in
-by looking in the upper-right part of the Eclipse window.
-<h4>Create a <tt>Hello</tt> project</h4>
+  by looking in the upper-right part of the Eclipse window.
+</p>
+
+<h4>Create a <code>Hello</code> project</h4>
 <ol>
   <li> Launch Eclipse and create a new 
-      Java project, <tt>File -> New -> Java Project</tt> and enter the 
+      Java project, <code>File -> New -> Java Project</code> and enter the 
       following information:
       <pre> Project Name: <font color="darkgreen">Hello</font> </pre>
+  </li>
     
-  <li> Create a <tt>HelloWorld.java</tt> program.  In the 
-      <tt>Package Explorer</tt> pane right-click on the <tt>Hello</tt> 
-      folder and select <tt>New -> Class</tt>.  Enter the following 
-      information and then click <tt>Finish</tt>.
+  <li> Create a <code>HelloWorld.java</code> program.  In the 
+      <code>Package Explorer</code> pane right-click on the <code>Hello</code> 
+      folder and select <code>New -> Class</code>.  Enter the following 
+      information and then click <code>Finish</code>.
       <pre>
         Enter <font color="darkgreen">HelloWorld</font> next to "Name:"
         Check the box next to "public static void main(String[] args):"
         Check the box next to "Generate comments:"
       </pre>
-  <li> Modify the resulting <tt>HelloWorld.java</tt> file in the Eclipse
+  </li>
+  <li> Modify the resulting <code>HelloWorld.java</code> file in the Eclipse
       editor to make it look like 
       <a href="Supplied/HelloWorld.java" target="_blank">this file</a>.
+  </li>
 </ol>
+
 <h4>Run the program</h4>
 <ol>
-  <li> In <tt>Package Explorer</tt> pane, right-click 
-      on <tt>Hello.java</tt> and select <tt>Run As -> Java Application</tt>.
-  <li> Verify the output in the <tt>Console</tt> window.
+  <li>In <code>Package Explorer</code> pane, right-click 
+      on <code>Hello.java</code> and select <code>Run As -> Java Application</code>.
+  </li>
+  <li> Verify the output in the <code>Console</code> window.
+  </li>
 </ol>
    
 <h3>Configuring Git</h3>
     
-<center><IMG BORDER=0 WIDTH=150 SRC="Media/Git.png"></center>
+<IMG BORDER=0 WIDTH=150 SRC="Media/Git.png">
 <p>
-Part of this assignment is to begin your education in UNIX.
-You will begin to use the terminal command line because several
-software development operations may require you 
-to know how to use the command line.
+  Part of this assignment is to begin your education in UNIX.
+  You will begin to use the terminal command line because several
+  software development operations may require you 
+  to know how to use the command line.
+</p>
 <p>
-You may find some of the following UNIX Documentation links useful:
-<ul>
-  <li>
-<a href="References/unixRefCard.html" target="_blank">UNIX Reference Card</a>
-  <li>
-<a href="http://www.cs.rit.edu/~f2y-grd/beg-guide.pdf " target="_blank">
-CS Dept. Introduction to UNIX PDF</a>
-  <li>
-<a href=" http://info.ee.surrey.ac.uk/Teaching/Unix/ " target="_blank">
-Michael Stonebank's 2001 UNIX tutorial</a> is useful and widely available.
-http://biocomp.health.unm.edu/biomed505/Unix/Unix2/
-  <li>
-<a href=" http://winscp.net/ " target="_blank">
-WinSCP, Secure copy file transfer program for MSWindows</a>
-  <li> Search the internet for &quot;xming&quot; if you are a PC user.  
-      The xming facility adds XWindows capabilities to your PC.  XWindows 
-      is the X11 windows server and toolkit developed over many years at 
-      <b>MIT</b>, and it allows you to run a <tt>GUI</tt> program remotely.
-</ul>
+  You may find some of the following UNIX Documentation links useful:
+  <ul>
+    <li>
+      <a href="References/unixRefCard.html" target="_blank">UNIX Reference Card</a>
+    </li>
+    <li>
+      <a href="http://www.cs.rit.edu/~f2y-grd/beg-guide.pdf " target="_blank">
+      CS Dept. Introduction to UNIX PDF</a>
+    </li>
+    <li>
+      <a href=" http://info.ee.surrey.ac.uk/Teaching/Unix/ " target="_blank">
+      Michael Stonebank's 2001 UNIX tutorial</a> is useful and widely available.
+      http://biocomp.health.unm.edu/biomed505/Unix/Unix2/
+    </li>
+    <li>
+      <a href=" http://winscp.net/ " target="_blank">
+      WinSCP, Secure copy file transfer program for MSWindows</a>
+    </li>
+    <li> Search the internet for &quot;xming&quot; if you are a PC user.  
+        The xming facility adds XWindows capabilities to your PC.  XWindows 
+        is the X11 windows server and toolkit developed over many years at 
+        <b>MIT</b>, and it allows you to run a <code>GUI</code> program remotely.
+    </li>
+  </ul>
 
-<ol>
-  <li> Log in to a CS system.  
-      <p>If you are in a lab and sitting in front of a Linux machine or 
-         a Mac, just open a terminal.
-      <p> If you are using your own Linux or Mac machine, the <tt>ssh</tt>
-         program is a secure, remote login shell program. Open a terminal
-         and in the shell type the following,
-         where <tt>{username}</tt> is your CS username:
-         <pre>
-         $ <font color="darkgreen">ssh -Y {username}@glados.cs.rit.edu</font>
-         </pre>  
-      <p> On Windows machines, install (only if using your own machine) and 
-         then run <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">PuTTY</a>.
-         Under the <tt>Session</tt> category enter the following and click
-     <tt>Open</tt>.
-         <pre>
-           <font color="darkgreen">Host Name: glados.cs.rit.edu</font>
-         </pre>
-  <li> Enter the command sequence shown below.  In the illustration, the $ 
-      is the prompt and the hash mark begins a comment extending to the end 
-      of the line; do not enter these parts.  The <tt>git</tt> and 
-      <tt>pico</tt> commands are the CVS program and the pico editing 
-      program respectively.
-      <pre>
-        $ <font color="darkgreen">cd</font>                        # go to home dir.
-        $ <font color="darkgreen">mkdir rit_git</font>             # create git repository directory
-        $ <font color="darkgreen">git init --bare rit_git</font>   # initialize git repository
-        $ <font color="darkgreen">mkdir -p .ssh</font>             # create .ssh dir. if non-existent
-        $ <font color="darkgreen">pico .ssh/environment</font>     # edit environment file in .ssh dir.
-         <font color="darkgreen">PATH=/opt/csw/bin:/usr/bin</font> # add line to file. Ctrl-X + Y to save
-        $ <font color="darkgreen">pwd</font>                       <b><font color="darkred"># record full path for next step</font></b>
-      </pre>
-  <li> Go to Eclipse and connect to your Git repository.  Select 
-      <tt>Window -> Open Perspective -> Other -> Git</tt>.
-      Click the drop-down arrow in the top right corner of the <tt>Git Repositories</tt> pane and select 
-      <tt>Clone a Repository</tt>.  Enter the following information 
-      and click <tt>Finish</tt>. When prompted, enter your CS password. 
-      <p>
-      Note: <tt>{path_from_pwd}</tt> is the string returned by the 
-      <tt>pwd</tt> command, and <tt>{username}</tt> and <tt>{password}</tt> 
-      are your CS credentials.
-      <p>
-      Note: If asked about creating a <tt>.ssh/known_hosts</tt> file,
-      agree to it.
-      <pre> 
-        Host: <font color="darkgreen">glados.cs.rit.edu</font>
-        Repository Path: <font color="darkgreen">{path_from_pwd}/rit_git</font>
-        User: <font color="darkgreen">{username}</font>
-        Password: <font color="darkgreen">{password}</font>
-        Connection type: <font color="darkgreen">ssh</font>
-        <font color="darkgreen">select checkbox for</font> "Store in Secure Store"
-      </pre>
-</ol> 
+  <ol>
+    <li> Log in to a CS system.  
+        <p>If you are in a lab and sitting in front of a Linux machine or 
+           a Mac, just open a terminal.
+         </p>
+        <p> If you are using your own Linux or Mac machine, the <code>ssh</code>
+           program is a secure, remote login shell program. Open a terminal
+           and in the shell type the following,
+           where <code>{username}</code> is your CS username:
+           <pre>
+           $ <font color="darkgreen">ssh -Y {username}@glados.cs.rit.edu</font>
+           </pre>  
+         </p>
+        <p> On Windows machines, install (only if using your own machine) and 
+           then run <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">PuTTY</a>.
+           Under the <code>Session</code> category enter the following and click
+       <code>Open</code>.
+           <pre>
+             <font color="darkgreen">Host Name: glados.cs.rit.edu</font>
+           </pre>
+         </p>
+    </li>
+    <li> Enter the command sequence shown below.  In the illustration, the $ 
+        is the prompt and the hash mark begins a comment extending to the end 
+        of the line; do not enter these parts.  The <code>git</code> and 
+        <code>pico</code> commands are the CVS program and the pico editing 
+        program respectively.
+        <pre>
+          $ <font color="darkgreen">cd</font>                        # go to home dir.
+          $ <font color="darkgreen">mkdir rit_git</font>             # create git repository directory
+          $ <font color="darkgreen">git init --bare rit_git</font>   # initialize git repository
+          $ <font color="darkgreen">mkdir -p .ssh</font>             # create .ssh dir. if non-existent
+          $ <font color="darkgreen">pico .ssh/environment</font>     # edit environment file in .ssh dir.
+           <font color="darkgreen">PATH=/opt/csw/bin:/usr/bin</font> # add line to file. Ctrl-X + Y to save
+          $ <font color="darkgreen">pwd</font>                       <b><font color="darkred"># record full path for next step</font></b>
+        </pre>
+    </li>
+    <li> Go to Eclipse and connect to your Git repository.  Select 
+        <code>Window -> Open Perspective -> Other -> Git</code>.
+        Click the drop-down arrow in the top right corner of the <code>Git Repositories</code> pane and select 
+        <code>Clone a Repository</code>.  Enter the following information 
+        and click <code>Finish</code>. When prompted, enter your CS password. 
+        <p>
+        Note: <code>{path_from_pwd}</code> is the string returned by the 
+        <code>pwd</code> command, and <code>{username}</code> and <code>{password}</code> 
+        are your CS credentials.
+      </p>
+        <p>
+        Note: If asked about creating a <code>.ssh/known_hosts</code> file,
+        agree to it.
+        <pre> 
+          Host: <font color="darkgreen">glados.cs.rit.edu</font>
+          Repository Path: <font color="darkgreen">{path_from_pwd}/rit_git</font>
+          User: <font color="darkgreen">{username}</font>
+          Password: <font color="darkgreen">{password}</font>
+          Connection type: <font color="darkgreen">ssh</font>
+          <font color="darkgreen">select checkbox for</font> "Store in Secure Store"
+        </pre>
+      </p>
+    </li>
+  </ol> 
+</p>
 
 <h3>Committing A Project to Git Repository</h3>
         
@@ -160,22 +188,22 @@ WinSCP, Secure copy file transfer program for MSWindows</a>
 <p>
 <ol>
   <li> Change back to the Eclipse Java perspective by doing: 
-      <p> Select <tt>Window -> Open Perspective -> Java</tt>.
-  <li> In the <tt>Package Explorer</tt> pane, right-click on the 
-      <tt>Hello</tt> project folder and select 
-      <tt>Team -> Share Project</tt>.
-  <li>Select Git and click <tt>Next</tt>. 
-  <li> Select the repository you just created and click <tt>Finish</tt>.
-  <li> Right click on the project you just shared and select <tt>Team -> Commit</tt>.
+      <p> Select <code>Window -> Open Perspective -> Java</code>.
+  <li> In the <code>Package Explorer</code> pane, right-click on the 
+      <code>Hello</code> project folder and select 
+      <code>Team -> Share Project</code>.
+  <li>Select Git and click <code>Next</code>. 
+  <li> Select the repository you just created and click <code>Finish</code>.
+  <li> Right click on the project you just shared and select <code>Team -> Commit</code>.
   <li> Enter a comment for the commit operation (i.e. 
-      <tt>Initial revision.</tt>), select the files you wish
-       to include, and click <tt>Commit</tt>.
-  <li> Right click on the project again and select <tt>Team -> Push Branch</tt>.
-  <li> Add an additional print statement in <tt>HelloWorld.java</tt> 
+      <code>Initial revision.</code>), select the files you wish
+       to include, and click <code>Commit</code>.
+  <li> Right click on the project again and select <code>Team -> Push Branch</code>.
+  <li> Add an additional print statement in <code>HelloWorld.java</code> 
       and make a second commit of the file.
-  <li> This time, after selecting the files to commit, click <tt>Commit and Push</tt>.
+  <li> This time, after selecting the files to commit, click <code>Commit and Push</code>.
        From now on, whenever you want to send your changes to the remote repository, you
-       will want to use this button instead of the <tt>Commit</tt> button.
+       will want to use this button instead of the <code>Commit</code> button.
   <li> On the file system, navigate to the <b>rit_git</b> folder 
       where your program file resides and verify that the file is 
       present and correct. This folder is where Eclipse
@@ -205,52 +233,17 @@ different operating system!
 <p>
 <ul>
   <li> To check out a project for the first time in Eclipse, select 
-      <tt>Window -> Open Perspective -> Other -> Git</tt>.
-      In the <tt>Git Repositories</tt> pane turn the arrow for the 
-      repository icon and the <tt>Working Directory</tt> down.  This will reveal all 
+      <code>Window -> Open Perspective -> Other -> Git</code>.
+      In the <code>Git Repositories</code> pane turn the arrow for the 
+      repository icon and the <code>Working Directory</code> down.  This will reveal all 
       of your projects in the repository.  Right-click on the project 
-      you want and select <tt>Import Projects</tt>.</li> 
+      you want and select <code>Import Projects</code>.</li> 
       <p> ... OR ... 
   <li> To update a project within Eclipse that is already checked out 
       from Git, right-click on the project folder in the 
-      <tt>Package Explorer</tt> perspective and select 
-      <tt>Team -> Pull</tt>.</li>
+      <code>Package Explorer</code> perspective and select 
+      <code>Team -> Pull</code>.</li>
 </ul>
 <p>
 <hr>
-<!--
-      <h3>Account Registration for <tt>try</tt> (pre-project work)</h3>
-
-    <p>
-      This course will be using the <i><tt>try</tt></i> program for
-      project submissions.  Before you can submit any work
-      through <i><tt>try</tt></i> you will first need to register, so
-      that <i><tt>try</tt></i> knows what section you are in (this
-      makes sure that the work you submit is placed in the correct
-      location for grading).  Since you are already logged in to a 
-      Linux-based CS machine, now is a good time to do this!
-    <p>
-      From the unix prompt, type:
-      <ul>
-        <tt><font color="darkgreen">try grd-142 register /dev/null</font></tt>
-      </ul>
-      You will then be prompted to select a lecture section.  After
-      that the registration process will display the information that
-      was recorded for you.  Note that it will display a
-      <tt><font color="darkgreen">Lab section: ##</font></tt>,
-      (where <tt><font color="darkgreen">##</font></tt> is a default
-      value based on your lecture section number); don't worry about
-      this as we generally won't be using <i><tt>try</tt></i> with the
-      labs.
-    <p>
-      For more information about the <i><tt>try</tt></i> program, you can find
-      documentation at:
-      <ul>
-        <A HREF="http://www.cs.rit.edu/~vcss243/Misc/try.html"> 
-      Guide to the <b>try</b> submission tool</a>
-      </ul>
-      You may want to verify with your SLI that you have correctly
-      registered before leaving the lab.
-    <hr>
--->
 </html>
