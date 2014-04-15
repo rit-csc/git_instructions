@@ -159,7 +159,21 @@
 		<br/><code># 		new file: file1.txt</code>
 		<br/><code># </code>
 	</li>
-	<li>Now we're ready to make our first commit!
+	<li>But what happens if you simply want to <b>rename</b> a tracked file?
+		Let's rename our <code>file1.txt</code> file to the more descriptive
+		name <code>readme.txt</code>:
+		<br/><code>$ git mv file1.txt readme.txt</code>
+	</li>
+	<li>Now check the <code>status</code> again:
+		<br/><code>$ git status</code>
+	</li>
+	<li>Observe the following output:
+		<br/><code># On branch master</code>
+		<br/><code># Changes to be committed:</code>
+		<br/><code># 	(use "git reset HEAD &lt;file&gt;..." to unstage)</code>
+		<br/><code># </code>
+		<br/><code># 		renamed: file1.txt -> readme.txt</code>
+		<br/><code># </code>
 	</li>
 </ol>
 
