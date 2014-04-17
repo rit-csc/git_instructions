@@ -1,17 +1,55 @@
 <html>
 <head>
 <title>RIT CS Git Tutorial | Committing your changes</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/bootstrap-theme.css" rel="stylesheet"/>
+  <script src="js/jquery-2.1.0.min.js"></script> <!-- Required for certain bootstrap features, like dropdowns -->
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#git-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Git</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="git-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="general.html">FAQ</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorial <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="setup.html">Setup</a></li>
+            <li class="active"><a href="committing.html">Committing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
 <h1>Committing your changes</h1>
 <p>Recall that the purpose of Git's index is to serve as a place to put changes that are ready to be committed.
 	This page explores how to manipulate the index and turn it into a commit once you're happy with its contents.
-<div>
-	<img src="working_with_the_stage.png" alt="Overview of working with the index"/>
-	<br/>Overview of working with the index
-	<br/>(Image credit: <a href="http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">Pro Git</a> by Scott Chacon)
+<div class="row">
+	<img class="center-block" src="working_with_the_stage.png" alt="Overview of working with the index"/>
 </div>
-
+<div class="row">
+  <p style="text-align: center">	
+    <br/>Overview of working with the index
+	<br/>(Image credit: <a href="http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">Pro Git</a> by Scott Chacon)
+  </p>  
+</div>
+  
 <h2>Querying status</h2>
 <!-- This section addresses the status command. -->
 <p>When using Git, if you are ever unsure of the state of
@@ -24,26 +62,26 @@
 <ol>
 	<li>To create a file for our commit (in this case,
 		the generic file <code>file1.txt</code>), run:
-		<br/><code>$ touch file1.txt</code>
+		<pre>$ touch file1.txt</pre>
 	</li>
 	<li>To ensure the file was successfully created, run:
-		<br/><code>$ ls</code>
+		<pre>$ ls</pre>
 		<br/>You should find <code>file1.txt</code> in the list of files.
 	</li>
 	<li>Now that we have a file for our first commit,
 		let's first check the status of our repo:
-		<br/><code>$ git status</code> 
+		<pre>$ git status</pre> 
 	</li>
 	<li>This should yield the following output:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Untracked files:</code>
-		<br/><code># 	(use "git add &lt;file&gt;..." to include in what will be committed)</code>
-		<br/><code># </code>
-		<br/><code># 		file1.txt</code>
-		<br/><code>nothing added to commit but untracked files present (use "git add" to track)</code>
+<pre># On branch master
+#
+# Initial commit
+#
+# Untracked files:
+# 	(use "git add &lt;file&gt;..." to include in what will be committed)
+#
+# 		file1.txt
+nothing added to commit but untracked files present (use "git add" to track)</pre>
 	</li>
 	<li>Notice the <code>Untracked files</code> header:
 		it indicates that <code>file1.txt</code>'s history is not being tracked in our repository.
@@ -64,21 +102,21 @@
 	<li>We want to commit our new file called <code>file1.txt</code>,
 		so let's add it to the commit!
 		You can do this with the following command:
-		<br/><code>$ git add file1.txt</code>
+		<pre>$ git add file1.txt</pre>
 	</li>
 	<li>To check if it worked, we will use the <code>status</code> tool again:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>This time, the output generated is different:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
+		<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# </pre>
 	</li>
 	<li>Note that Git now sees our "newly-added" file.
 	</li>
@@ -105,33 +143,33 @@
 		Save the file and return to the terminal window.
 	</li>
 	<li>Now what? The <code>status</code> command can give us a hint:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Now we see that there are two different versions
 		of <code>file1.txt</code> that have not been committed:
 		the version in the stage (unchanged) and the one in our current working directory (changed).
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
-		<br/><code># Changes not staged for commit:</code>
-		<br/><code># 	(use "git add &lt;file&gt;..." to update what will be committed)</code>
-		<br/><code># 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code>
-		<br/><code># </code>
-		<br/><code># 		modified: file1.txt</code>
-		<br/><code># </code>
+		<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# 
+# Changes not staged for commit:
+# 	(use "git add &lt;file&gt;..." to update what will be committed)
+# 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+# 
+# 		modified: file1.txt
+# </pre>
 	</li>
 	<li>We must decide whether we want to include these new changes in our next commit:
 		<ol type="a">
 			<li>If we do want to commit these changes with our earlier ones, we must update the version in the stage to reflect the new ones:
 				<ul>
 					<li>To re-add the file to the stage:
-						<br/><code>$ git add file1.txt</code>
+						<pre>$ git add file1.txt</pre>
 					</li>
 				</ul>
 			</li>
@@ -139,41 +177,41 @@
 			<li>If we no longer want the new changes at all, we can permanently discard them:
 				<ul>
 					<li>To discard the changes made to <code>file1.txt</code> after it was last added to the stage:
-						<br/><code>$ git checkout -- file1.txt</code>
+						<pre>$ git checkout -- file1.txt</pre>
 					</li>
 				</ul>
 			</li>
 		</ol>
 	</li>
 	<li>Just to double check that everything is as it should be:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
+		<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# </pre>
 	</li>
 	<li>But what happens if you simply want to <b>rename</b> a tracked file?
 		Let's rename our <code>file1.txt</code> file to the more descriptive
 		name <code>readme.txt</code>:
-		<br/><code>$ git mv file1.txt readme.txt</code>
+		<pre>$ git mv file1.txt readme.txt</pre>
 	</li>
 	<li>Now check the <code>status</code> again:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git reset HEAD &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		renamed: file1.txt -> readme.txt</code>
-		<br/><code># </code>
+		<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+# 
+# 		renamed: file1.txt -> readme.txt
+# </pre>
 	</li>
 </ol>
 
@@ -186,7 +224,7 @@
 		so we are ready to go.
 	</li>
 	<li>To make the commit, use the following command:
-		<br/><code>$ git commit</code>
+		<pre>$ git commit</pre>
 	</li>
 	<li>If you are working in the terminal, you will automatically
 		be taken to your default text editor.
@@ -195,17 +233,17 @@
 	</li>
 	<li>The output produced will look something like this
 		(possibly with a few small deviations):
-		<br/><code>[master (root-commit) 949b9f1] init commit</code>
-		<br/><code> 1 file changed, 1 insertion(+)</code>
-		<br/><code> create mode 100644 file1.txt</code>
+		<pre>[master (root-commit) 949b9f1] init commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt</pre>
 	</li>
 	<li>For the sake of knowledge, let's check our <code>status</code> again,
 		now that the commit is complete:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code>nothing to commit (working directory clean) </code>
+		<pre># On branch master
+nothing to commit (working directory clean) </pre>
 	</li>
 	<li>Success!
 	</li>
@@ -227,11 +265,11 @@
 		right there in the terminal window:
 		<ol>
 			<li>Issue the following command and enjoy:
-				<br/><code>$ git log --oneline</code>
+				<pre>$ git log --oneline</pre>
 			</li>
 			<li>For example, after the above commit,
 				the following log would be displayed:
-				<br/><code>949b9f1 init commit</code>
+				<pre>949b9f1 init commit</pre>
 			</li>
 			<li>If your log output is longer than the terminal window,
 				you will need to press the "q" key to return to the command line.
@@ -244,7 +282,7 @@
 		<ol>
 			<li>For example, to save your commit history in a file
 				called <code>log_file.txt</code>, use the following command:
-				<br/><code>$ git log &gt; log_file.txt</code>
+				<pre>$ git log &gt; log_file.txt</pre>
 			</li>
 			<li>If you open this file in your preferred text editor,
 				you'll see that all past commits
@@ -264,6 +302,8 @@
 	<li></li>
 	<li></li>
 </ol>
-
+    
+<a href="general.html"><span class="pull-right btn btn-default">Frequently asked questions <icon class="glyphicon glyphicon-chevron-right"></icon></span></a>
+</div>
 </body>
 </html>
