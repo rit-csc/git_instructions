@@ -1,9 +1,43 @@
 <html>
 <head>
 <title>RIT CS Git Tutorial | Overview</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/bootstrap-theme.css" rel="stylesheet"/>
+  <script src="js/jquery-2.1.0.min.js"></script> <!-- Required for certain bootstrap features, like dropdowns -->
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Introduction to Git</h1>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#git-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Git</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="git-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="general.html">FAQ</a></li>
+        <li><a href="eclipse_setup.html">Git &amp; Eclipse</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorial <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="setup.html">Setup</a></li>
+            <li><a href="committing.html">Committing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
 
 <h2>What is version control?</h2>
 <p>Version control is used to keep track of the changes made
@@ -29,10 +63,14 @@
 	In this way, Git creates a tree of commits that shows
 	the evolution of a project over time.
 </p>
-<div>
-	<img src="working_staging_repositorying.png" alt="The working directory, staging area, and tree of commits"/><br/>
+<div class="row">
+	<img class="center-block" src="working_staging_repositorying.png" alt="The working directory, staging area, and tree of commits"/>
+</div>
+<div class="row">
+    <p style="text-align: center"><br/>
 	The working directory, staging area, and tree of commits.<br/>
 	(Image credit: <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics" target="_blank">Pro Git</a> by Scott Chacon)
+    </p>
 </div>
 
 <h2>How is Git different than other version control systems?</h2>
@@ -52,11 +90,7 @@
 	This is wise for both organizational and version control-related reasons,
 	as you will see.
 </p>
-<ol>
-	<li><a href="setup.html">Setting up a repository</a></li>
-	<li><a href="committing.html">Committing your changes</a></li>
-	<li><a href="general.html">Frequently Asked Questions</a></li>
-</ol>
-
+    <a href="setup.html"><span class="pull-right btn btn-default">Setting up a repository <icon class="glyphicon glyphicon-chevron-right"></icon></span></a>
+</div>
 </body>
 </html>

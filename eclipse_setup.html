@@ -1,12 +1,44 @@
 <html>
 <head>
 <title>RIT CS Git Tutorial | Eclipse</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/bootstrap-theme.css" rel="stylesheet"/>
+  <script src="js/jquery-2.1.0.min.js"></script> <!-- Required for certain bootstrap features, like dropdowns -->
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#git-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Git</a>
+    </div>
 
-<h2>Configuring Git for Eclipse</h2>
-    
-<IMG BORDER=0 WIDTH=150 SRC="Media/Git.png">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="git-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="general.html">FAQ</a></li>
+        <li class="active"><a href="eclipse_setup.html">Git &amp; Eclipse</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorial <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="setup.html">Setup</a></li>
+            <li><a href="committing.html">Committing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+<div class="container">
+<h2><img border=0 width=150 src="Media/Git.png"> Configuring Git for Eclipse</h2>
 
 <p> Many of the introductory CS courses recommend the use of Eclipse.
     Luckily, Eclipse can be easily configured to work with your existing
@@ -25,7 +57,7 @@
                         <li> Open the terminal window.
                         </li>
                         <li> SSH into a CS system with the following command:
-                            <br/><code>$ ssh {your_username}@glados.cs.rit.edu</code>
+                            <pre>$ ssh {your_username}@glados.cs.rit.edu</pre>
                         </li>
                         <li> Enter your CS password when prompted.
                         </li>
@@ -47,27 +79,27 @@
             </ul>
         </li>
         <li> Navigate to your home directory:
-            <br/><code>$ cd</code>
+            <pre>$ cd</pre>
         </li>
         <li> Create and initialize the Git repository:
-            <br/><code>$ git init --bare rit_git</code>
+            <pre>$ git init --bare rit_git</pre>
         </li>
         <li> Create a <code>.ssh</code> directory
             (if one does not already exist):
-            <br/><code>$ mkdir -p .ssh</code>
+            <pre>$ mkdir -p .ssh</pre>
         </li>
         <li> Use the <code>vi</code> text editor
             to edit the "environment" file in the <code>.ssh</code> directory:
-            <br/><code>$ vi .ssh/environment</code>
+            <pre>$ vi .ssh/environment</pre>
         </li>
         <li> Press "<code>i</code>" and enter the following line:
-            <br/><code>PATH=/opt/csw/bin:/usr/bin</code>
+            <pre>PATH=/opt/csw/bin:/usr/bin</pre>
         </li>
         <li> Press <code>esc</code>, type "<code>:wq</code>",
             and press <code>enter</code>.
         </li>
         <li> Get the full path to your current directory:
-            <br/><code>$ pwd</code>
+            <pre>$ pwd</pre>
         </li>
         <li> <b>Make sure to record the path!!
             You will need it for the next few steps.</b>
@@ -83,24 +115,10 @@
                 </li>
                 <li> Enter the following information and
                     then click <code>Finish</code>:
-                    <table cellspacing=10>
-                        <tr>
-                            <td>
-                                Host: 
-                                <br/>Repository Path: 
-                                <br/>User: 
-                                <br/>Password: 
-                                <br/>Connection Type: 
-                            </td>
-                            <td>
-                                <code>glados.cs.rit.edu</code> 
-                                <br/><code>{path_from_pwd}/rit_git</code>
-                                <br/><code>{CS_username}</code>
-                                <br/><code>{CS_password}</code>
-                                <br/><code>ssh</code>
-                            </td>
-                        </tr>
-                    </table>
+<pre>Host:             glados.cs.rit.edu
+Repository Path:  {path_from_pwd}/rit_git
+Password:         {CS_username}
+Connection Type:  ssh</pre>
                     (select checkbox for <code>"Store in Secure Store"</code>)
                     <p>
                         <u>Note:</u> Replace <code>{path_from_pwd}</code> with
@@ -220,6 +238,6 @@
         </li>
     </ol>
 </p>
-
+</div>
 </body>
 </html>
