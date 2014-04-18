@@ -56,15 +56,14 @@
             (if one does not already exist):
             <br/><code>$ mkdir -p .ssh</code>
         </li>
-        <li> Use the <code>vi</code> text editor
+        <li> Use the <code>pico</code> text editor
             to edit the "environment" file in the <code>.ssh</code> directory:
-            <br/><code>$ vi .ssh/environment</code>
+            <br/><code>$ pico .ssh/environment</code>
         </li>
-        <li> Press "<code>i</code>" and enter the following line:
+        <li> Add the following line to the file:
             <br/><code>PATH=/opt/csw/bin:/usr/bin</code>
         </li>
-        <li> Press <code>esc</code>, type "<code>:wq</code>",
-            and press <code>enter</code>.
+        <li> Press <code>Ctrl-X + Y</code> to save.
         </li>
         <li> Get the full path to your current directory:
             <br/><code>$ pwd</code>
