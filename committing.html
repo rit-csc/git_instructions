@@ -24,15 +24,15 @@
 <ol>
 	<li>To create a file for our commit (in this case,
 		the generic file <code>file1.txt</code>), run:
-		<br/><code>$ touch file1.txt</code>
+		<pre>$ touch file1.txt</pre>
 	</li>
 	<li>To ensure the file was successfully created, run:
-		<br/><code>$ ls</code>
-		<br/>You should find <code>file1.txt</code> in the list of files.
+		<pre>$ ls</pre>
+		You should find <code>file1.txt</code> in the list of files.
 	</li>
 	<li>Now that we have a file for our first commit,
 		let's first check the status of our repo:
-		<br/><code>$ git status</code> 
+		<pre>$ git status</pre> 
 	</li>
 	<li>This should yield the following output:
 <pre># On branch master
@@ -64,10 +64,10 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 	<li>We want to commit our new file called <code>file1.txt</code>,
 		so let's add it to the commit!
 		You can do this with the following command:
-		<br/><code>$ git add file1.txt</code>
+		<pre>$ git add file1.txt</pre>
 	</li>
 	<li>To check if it worked, we will use the <code>status</code> tool again:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>This time, the output generated is different:
 <pre># On branch master
@@ -105,7 +105,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 		Save the file and return to the terminal window.
 	</li>
 	<li>Now what? The <code>status</code> command can give us a hint:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Now we see that there are two different versions
 		of <code>file1.txt</code> that have not been committed:
@@ -131,7 +131,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 			<li>If we do want to commit these changes with our earlier ones, we must update the version in the stage to reflect the new ones:
 				<ul>
 					<li>To re-add the file to the stage:
-						<br/><code>$ git add file1.txt</code>
+						<pre>$ git add file1.txt</pre>
 					</li>
 				</ul>
 			</li>
@@ -139,14 +139,14 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 			<li>If we no longer want the new changes at all, we can permanently discard them:
 				<ul>
 					<li>To discard the changes made to <code>file1.txt</code> after it was last added to the stage:
-						<br/><code>$ git checkout -- file1.txt</code>
+						<pre>$ git checkout -- file1.txt</pre>
 					</li>
 				</ul>
 			</li>
 		</ol>
 	</li>
 	<li>Just to double check that everything is as it should be:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
 <pre># On branch master
@@ -162,10 +162,10 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 	<li>But what happens if you simply want to <b>rename</b> a tracked file?
 		Let's rename our <code>file1.txt</code> file to the more descriptive
 		name <code>readme.txt</code>:
-		<br/><code>$ git mv file1.txt readme.txt</code>
+		<pre>$ git mv file1.txt readme.txt</pre>
 	</li>
 	<li>Now check the <code>status</code> again:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
 <pre># On branch master
@@ -186,7 +186,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 		so we are ready to go.
 	</li>
 	<li>To make the commit, use the following command:
-		<br/><code>$ git commit</code>
+		<pre>$ git commit</pre>
 	</li>
 	<li>If you are working in the terminal, you will automatically
 		be taken to your default text editor.
@@ -195,17 +195,17 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 	</li>
 	<li>The output produced will look something like this
 		(possibly with a few small deviations):
-		<br/><code>[master (root-commit) 949b9f1] init commit</code>
-		<br/><code> 1 file changed, 1 insertion(+)</code>
-		<br/><code> create mode 100644 file1.txt</code>
+<pre>[master (root-commit) 949b9f1] init commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt</pre>
 	</li>
 	<li>For the sake of knowledge, let's check our <code>status</code> again,
 		now that the commit is complete:
-		<br/><code>$ git status</code>
+		<pre>$ git status</pre>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code>nothing to commit (working directory clean) </code>
+<pre># On branch master
+nothing to commit (working directory clean) </pre>
 	</li>
 	<li>Success!
 	</li>
@@ -227,11 +227,11 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 		right there in the terminal window:
 		<ol>
 			<li>Issue the following command and enjoy:
-				<br/><code>$ git log --oneline</code>
+				<pre>$ git log --oneline</pre>
 			</li>
 			<li>For example, after the above commit,
 				a log following this format would be displayed:
-				<br/><code>949b9f1 init commit</code>
+				<pre>949b9f1 init commit</pre>
 			</li>
 			<li>If your log output is longer than the terminal window,
 				you will need to press the "q" key to return to the command line.
@@ -244,7 +244,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 		<ol>
 			<li>For example, to save your commit history in a file
 				called <code>log_file.txt</code>, use the following command:
-				<br/><code>$ git log &gt; log_file.txt</code>
+				<pre>$ git log &gt; log_file.txt</pre>
 			</li>
 			<li>If you open this file in your preferred text editor,
 				you'll see that all past commits

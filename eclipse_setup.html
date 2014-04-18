@@ -25,7 +25,7 @@
                         <li> Open the terminal window.
                         </li>
                         <li> SSH into a CS system with the following command:
-                            <br/><code>$ ssh {your_username}@glados.cs.rit.edu</code>
+                            <pre>$ ssh {your_username}@glados.cs.rit.edu</pre>
                         </li>
                         <li> Enter your CS password when prompted.
                         </li>
@@ -47,26 +47,26 @@
             </ul>
         </li>
         <li> Navigate to your home directory:
-            <br/><code>$ cd</code>
+            <pre>$ cd</pre>
         </li>
         <li> Create and initialize the Git repository:
-            <br/><code>$ git init --bare rit_git</code>
+            <pre>$ git init --bare rit_git</pre>
         </li>
         <li> Create a <code>.ssh</code> directory
             (if one does not already exist):
-            <br/><code>$ mkdir -p .ssh</code>
+            <pre>$ mkdir -p .ssh</pre>
         </li>
         <li> Use the <code>pico</code> text editor
             to edit the "environment" file in the <code>.ssh</code> directory:
-            <br/><code>$ pico .ssh/environment</code>
+            <pre>$ pico .ssh/environment</pre>
         </li>
         <li> Add the following line to the file:
-            <br/><code>PATH=/opt/csw/bin:/usr/bin</code>
+            <pre>PATH=/opt/csw/bin:/usr/bin</pre>
         </li>
         <li> Press <code>Ctrl-X + Y</code> to save.
         </li>
         <li> Get the full path to your current directory:
-            <br/><code>$ pwd</code>
+            <pre>$ pwd</pre>
         </li>
         <li> <b>Make sure to record the path!!
             You will need it for the next few steps.</b>
