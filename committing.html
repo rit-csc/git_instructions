@@ -35,15 +35,15 @@
 		<br/><code>$ git status</code> 
 	</li>
 	<li>This should yield the following output:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Untracked files:</code>
-		<br/><code># 	(use "git add &lt;file&gt;..." to include in what will be committed)</code>
-		<br/><code># </code>
-		<br/><code># 		file1.txt</code>
-		<br/><code>nothing added to commit but untracked files present (use "git add" to track)</code>
+<pre># On branch master
+# 
+# Initial commit
+# 
+# Untracked files:
+# 	(use "git add &lt;file&gt;..." to include in what will be committed)
+# 
+# 		file1.txt
+nothing added to commit but untracked files present (use "git add" to track)</pre>
 	</li>
 	<li>Notice the <code>Untracked files</code> header:
 		it indicates that <code>file1.txt</code>'s history is not being tracked in our repository.
@@ -70,15 +70,15 @@
 		<br/><code>$ git status</code>
 	</li>
 	<li>This time, the output generated is different:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
+<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# </pre>
 	</li>
 	<li>Note that Git now sees our "newly-added" file.
 	</li>
@@ -110,21 +110,21 @@
 	<li>Now we see that there are two different versions
 		of <code>file1.txt</code> that have not been committed:
 		the version in the stage (unchanged) and the one in our current working directory (changed).
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
-		<br/><code># Changes not staged for commit:</code>
-		<br/><code># 	(use "git add &lt;file&gt;..." to update what will be committed)</code>
-		<br/><code># 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code>
-		<br/><code># </code>
-		<br/><code># 		modified: file1.txt</code>
-		<br/><code># </code>
+<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# 
+# Changes not staged for commit:
+# 	(use "git add &lt;file&gt;..." to update what will be committed)
+# 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+# 
+# 		modified: file1.txt
+# </pre>
 	</li>
 	<li>We must decide whether we want to include these new changes in our next commit:
 		<ol type="a">
@@ -149,15 +149,15 @@
 		<br/><code>$ git status</code>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code># </code>
-		<br/><code># Initial commit</code>
-		<br/><code># </code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git rm --cached &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		new file: file1.txt</code>
-		<br/><code># </code>
+<pre># On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# 	(use "git rm --cached &lt;file&gt;..." to unstage)
+# 
+# 		new file: file1.txt
+# </pre>
 	</li>
 	<li>But what happens if you simply want to <b>rename</b> a tracked file?
 		Let's rename our <code>file1.txt</code> file to the more descriptive
@@ -168,12 +168,12 @@
 		<br/><code>$ git status</code>
 	</li>
 	<li>Observe the following output:
-		<br/><code># On branch master</code>
-		<br/><code># Changes to be committed:</code>
-		<br/><code># 	(use "git reset HEAD &lt;file&gt;..." to unstage)</code>
-		<br/><code># </code>
-		<br/><code># 		renamed: file1.txt -> readme.txt</code>
-		<br/><code># </code>
+<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# 		renamed: file1.txt -> readme.txt
+# </pre>
 	</li>
 </ol>
 
@@ -230,7 +230,7 @@
 				<br/><code>$ git log --oneline</code>
 			</li>
 			<li>For example, after the above commit,
-				the following log would be displayed:
+				a log following this format would be displayed:
 				<br/><code>949b9f1 init commit</code>
 			</li>
 			<li>If your log output is longer than the terminal window,
