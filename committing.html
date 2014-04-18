@@ -77,7 +77,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 # Changes to be committed:
 # 	(use "git rm --cached &lt;file&gt;..." to unstage)
 # 
-# 		new file: file1.txt
+# 		new file:	file1.txt
 # </pre>
 	</li>
 	<li>Note that Git now sees our "newly-added" file.
@@ -117,13 +117,13 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 # Changes to be committed:
 # 	(use "git rm --cached &lt;file&gt;..." to unstage)
 # 
-# 		new file: file1.txt
+# 		new file:	file1.txt
 # 
 # Changes not staged for commit:
 # 	(use "git add &lt;file&gt;..." to update what will be committed)
 # 	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 # 
-# 		modified: file1.txt
+# 		modified:	file1.txt
 # </pre>
 	</li>
 	<li>We must decide whether we want to include these new changes in our next commit:
@@ -156,23 +156,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 # Changes to be committed:
 # 	(use "git rm --cached &lt;file&gt;..." to unstage)
 # 
-# 		new file: file1.txt
-# </pre>
-	</li>
-	<li>But what happens if you simply want to <b>rename</b> a tracked file?
-		Let's rename our <code>file1.txt</code> file to the more descriptive
-		name <code>readme.txt</code>:
-		<pre>$ git mv file1.txt readme.txt</pre>
-	</li>
-	<li>Now check the <code>status</code> again:
-		<pre>$ git status</pre>
-	</li>
-	<li>Observe the following output:
-<pre># On branch master
-# Changes to be committed:
-# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
-#
-# 		renamed: file1.txt -> readme.txt
+# 		new file:	file1.txt
 # </pre>
 	</li>
 </ol>
@@ -213,6 +197,101 @@ nothing to commit (working directory clean) </pre>
 		we're at a good stopping point to leave the project and come back to it later.
 		Just after making a commit is also when we might submit our work for grading once we've finished an assignment.
 	</li>
+</ol>
+
+<h2>Renaming/Moving tracked files</h2>
+<!-- This section discusses renaming and moving tracked files. -->
+<p>Now that we have successfully made a commit, what happens if we need to <b>rename</b> a tracked file?</p>
+<ol>
+	<li>To find out, let's rename our <code>file1.txt</code> file
+		to the more descriptive name <code>readme.txt</code>:
+		<pre>$ git mv file1.txt readme.txt</pre>
+	</li>
+	<li>Now check the <code>status</code> again:
+		<pre>$ git status</pre>
+	</li>
+	<li>Observe the following output:
+<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# 		renamed:	file1.txt -> readme.txt
+# </pre>
+	</li>
+</ol>
+<p>
+	If you simply relocate a file within your repository,
+	you can use the <code>mv</code> command to update Git in the same way.
+</p>
+<ol>
+	<li>For example, let's move our <code>readme.txt</code> into
+		a new directory called <code>documentation</code>:
+<pre>$ mkdir documentation
+$ git mv readme.txt documentation/readme.txt</pre>
+	</li>
+	<li>Now check the <code>status</code> again:
+		<pre>$ git status</pre>
+	</li>
+	<li>Observe the following output:
+<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# 		renamed:	file1.txt -> documentation/readme.txt
+# </pre>
+	</li>
+	<li>Note that Git understood that the two changes were referencing
+		the same original file, <code>file1.txt</code>.</li>
+</ol>
+
+<h2>Removing tracked files</h2>
+<!-- This section discusses removing/deleting tracked files. -->
+<p>
+	It turns out that we do not need our <code>readme.txt</code> file afterall.
+	We want to delete our working copy, and <i>also</i> tell Git that we deleted it.  To accommplish this, we will use the <code>rm</code> command.
+</p>
+<ol>
+	<li>First things first: we need to delete the <code>readme.txt</code> file:
+		<pre>$ rm documentation/readme.txt</pre>
+	</li>
+	<li>Now check the <code>status</code> to see what happens:
+		<pre>$ git status</pre>
+	</li>
+	<li>Observe the following output:
+<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# 		renamed:	file1.txt -> documentation/readme.txt
+#
+# Changes not staged for commit:
+#	(use "git add/rm &lt;file&gt;..." to update what will be committed)
+#	(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#		deleted:	documentation/readme.txt
+# </pre>
+	</li>
+	<li>To make sure the deletion is included in our next commit,
+		follow the directions from the output:
+		<pre>$ git rm documentation/readme.txt</pre>
+	</li>
+	<li>This should result in the following output:
+		<pre>rm 'documentation/readme.txt'</pre>
+	</li>
+	<li>Now check the <code>status</code> again:
+		<pre>$ git status</pre>
+	</li>
+	<li>The output shows that the file has been successfully deleted
+		and is no longer being tracked:
+<pre># On branch master
+# Changes to be committed:
+# 	(use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# 		deleted:	file1.txt
+# </pre>
+	</li>
+	<li>Note that when the file was deleted, any other uncommitted changes
+		to that file were also discarded.  (In this example, the fact that we renamed and move the original <code>file1.txt</code> no longer matters.)</li>
 </ol>
 
 <h2>Viewing your commit history</h2>
