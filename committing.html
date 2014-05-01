@@ -338,10 +338,22 @@ $ git mv readme.txt documentation/readme.txt</pre>
 
 <h2>Viewing diffs</h2>
 <!--TODO: All sorts of diffs should go here-->
-<p></p>
+<p>If you ever reach a point where you would like to see the differences between your checked out version
+and some arbitrary commit, the following tool can be used.</p>
 <ol>
-	<li></li>
-	<li></li>
+	<li>To view the differences between your working directory and the HEAD, run the following:
+        <pre>$ git diff /path/to/filename</pre>
+        </li>
+	<li>To view the differences between the changes you have staged and some arbitrary commit, run the follwing:
+        <pre>$ git diff --cached &lt;commit&gt; /path/to/filename</pre>
+        the &lt;commit&gt; in this case is optional and, if you do not include it, the command will compare to the commit at HEAD by default.
+        </li>
+        <li>To view the differences between your working directory and some arbitrary commit, run the follwing:
+        <pre>$ git diff &lt;commit&gt; /path/to/filename</pre>
+        </li>
+        <li>To view the differences between two arbitrary commits, run the follwing
+        <pre>$ git diff &lt;commit&gt; &lt;commit&gt; /path/to/filename</pre>
+        </li>
 </ol>
 
 </body>
