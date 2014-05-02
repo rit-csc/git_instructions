@@ -338,23 +338,29 @@ $ git mv readme.txt documentation/readme.txt</pre>
 
 <h2>Viewing diffs</h2>
 <!--TODO: All sorts of diffs should go here-->
-<p>If you ever reach a point where you would like to see the differences between your checked out version
-and some arbitrary commit, the following tool can be used.</p>
-<ol>
-	<li>To view the differences between your working directory and the HEAD, run the following:
+<p>If you ever reach a point where you would like to see the differences 
+	between two different states of your repository,
+	the <code>diff</code> tool can be quite useful.</p>
+<ul>
+	<li>To view the differences between your working directory
+		and the <code>HEAD</code>, run the following:
         <pre>$ git diff /path/to/filename</pre>
-        </li>
-	<li>To view the differences between the changes you have staged and some arbitrary commit, run the follwing:
+    </li>
+	<li>To view the differences between the changes you have staged
+		and some arbitrary commit, run the follwing:
         <pre>$ git diff --cached &lt;commit&gt; /path/to/filename</pre>
-        the &lt;commit&gt; in this case is optional and, if you do not include it, the command will compare to the commit at HEAD by default.
-        </li>
-        <li>To view the differences between your working directory and some arbitrary commit, run the follwing:
+        Note:  In this situation, the &lt;commit&gt; argument is optional.
+        If you do not include it, the command will use the commit
+        at <code>HEAD</code> as the basis for comparision, by default.
+    </li>
+    <li>To view the differences between your working directory
+    	and some arbitrary commit, run the follwing:
         <pre>$ git diff &lt;commit&gt; /path/to/filename</pre>
-        </li>
-        <li>To view the differences between two arbitrary commits, run the follwing
-        <pre>$ git diff &lt;commit&gt; &lt;commit&gt; /path/to/filename</pre>
-        </li>
-</ol>
+    </li>
+    <li>To view the differences between two arbitrary commits, run the follwing
+        <pre>$ git diff &lt;commit1&gt; &lt;commit2&gt; /path/to/filename</pre>
+    </li>
+</ul>
 
 </body>
 </html>
