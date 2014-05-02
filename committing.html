@@ -166,7 +166,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 <p></p>
 <ol>
 	<li>We have already made sure that the stage accurately represents
-		everyting that we want to include in our commit,
+		everything that we want to include in our commit,
 		so we are ready to go.
 	</li>
 	<li>To make the commit, use the following command:
@@ -247,8 +247,8 @@ $ git mv readme.txt documentation/readme.txt</pre>
 <h2>Removing tracked files</h2>
 <!-- This section discusses removing/deleting tracked files. -->
 <p>
-	It turns out that we do not need our <code>readme.txt</code> file afterall.
-	We want to delete our working copy, and <i>also</i> tell Git that we deleted it.  To accommplish this, we will use the <code>rm</code> command.
+	It turns out that we do not need our <code>readme.txt</code> file after all.
+	We want to delete our working copy, and <i>also</i> tell Git that we deleted it.  To accomplish this, we will use the <code>rm</code> command.
 </p>
 <ol>
 	<li>First things first: we need to delete the <code>readme.txt</code> file:
@@ -337,7 +337,7 @@ $ git mv readme.txt documentation/readme.txt</pre>
 
 
 <h2>Viewing diffs</h2>
-<!--TODO: All sorts of diffs should go here-->
+<!-- This section discusses all sorts of useful diff commands -->
 <p>If you ever reach a point where you would like to see the differences 
 	between two different states of your repository,
 	the <code>diff</code> tool can be quite useful.</p>
@@ -351,7 +351,7 @@ $ git mv readme.txt documentation/readme.txt</pre>
         <pre>$ git diff --cached &lt;commit&gt; /path/to/filename</pre>
         Note:  In this situation, the &lt;commit&gt; argument is optional.
         If you do not include it, the command will use the commit
-        at <code>HEAD</code> as the basis for comparision, by default.
+        at <code>HEAD</code> as the basis for comparison, by default.
     </li>
     <li>To view the differences between your working directory
     	and some arbitrary commit, run the following:
