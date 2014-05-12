@@ -338,17 +338,29 @@ $ git mv readme.txt documentation/readme.txt</pre>
 <h2>Exploring old versions</h2>
 <!-- This section addresses checking out trees -->
 <p>Sometimes it's helpful to experiment with an older version of your codebase,
-	either for nostalgia or because you're trying to determine when you introduced a bug.
-	This is where the <code>checkout</code> tool comes in.</p>
+	either for nostalgia or because
+	you're trying to determine when you introduced a bug.
+	This is where the <code>checkout</code> tool comes in handy.</p>
 <ol>
-	<li>First use <code>$ git status</code> to ensure you don't have any uncommitted changes;
-		if you do, commit them before continuing.</li>
-	<li>Examine the output of <code>$ git log</code> and find the hash of the commit you want to work with.</li>
-	<li>Use this command to jump to the commit:
-		<pre>$ git checkout &lt;hash of destination commit&gt;</pre>
+	<li>First, check your <code>status</code>
+		to ensure you do not have any uncommitted changes:
+		<pre>$ git status</pre>
+		If you do, commit them before continuing.
 	</li>
-	<li>Read, build, and try out this older version of your code, but don't make changes you want to keep or attempt to commit anything.</li>
-	<li>Once you're ready to return to the latest version of your code, execute:
+	<li>Examine the output of your most recent <code>log</code>
+		(see the previous section for more details)
+		and find the hash of the commit you want to work with.
+	</li>
+	<li>Checkout the version of the code corresponding to the hash value
+		<code>&lt;hash&gt;</code>:
+		<pre>$ git checkout &lt;hash&gt;</pre>
+	</li>
+	<li>Read, build, and experiment with this older version of your code,
+		but <i>DO NOT</i> make changes you want to keep
+		or attempt to commit anything.
+	</li>
+	<li>Once you're ready to return to the latest version of your code,
+		execute this command:
 		<pre>$ git checkout master</pre>
 	</li>
 </ol>
