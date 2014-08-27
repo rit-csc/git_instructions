@@ -1,0 +1,14 @@
+
+#topbar {
+	position: relative;
+}
+
+.barbutton {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+
+.barbutton a {
+	text-decoration: none;
+}
