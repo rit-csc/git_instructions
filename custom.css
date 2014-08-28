@@ -1,5 +1,6 @@
 body{
-	margin: .5in;
+	margin-left: .5in;
+	margin-right: .5in;
 }
 
 div{
@@ -24,4 +25,5 @@ p{
 
 .barbutton a {
 	text-decoration: none;
+	text-align: center;
 }
