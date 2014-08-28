@@ -1,0 +1,13 @@
+body{
+	margin: .5in;
+}
+
+div{
+	/*background-color: yellow;*/
+}
+
+p{
+	/*background-color: red;*/
+	margin-left: 15px;
+	margin-right: 15px;
+}

@@ -1,112 +1,116 @@
 <html>
 <head>
 <title>RIT CS Git Tutorial | General Information</title>
+<link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
+<link rel="stylesheet" type="text/css" href="custom.css">
 </head>
 <body>
 <h1>Frequently Asked Questions</h1>
 
-
-
+<!-- ====================================================================== -->
 
 <h2>"I have made a grave error.  How do I reset everything??"</h2>
-<p>There are two possible courses of action, depending on your needs:
-	<ul>
-		<li>If you want to keep the changes you've made
-			since you're last commit, you can unstage everything:
-			<pre>$ git reset</pre></li>
-		<li>If you want to discard your changes and start fresh,
-			simply revert everything to the last commit:
-			<pre>$ git reset --hard</pre></li>
-	</ul>
-</p>
+<div>
+	<p>There are two possible courses of action, depending on your needs:
+		<ul>
+			<li>If you want to keep the changes you've made
+				since you're last commit, you can unstage everything:
+				<pre>$ git reset</pre></li>
+			<li>If you want to discard your changes and start fresh,
+				simply revert everything to the last commit:
+				<pre>$ git reset --hard</pre></li>
+		</ul>
+	</p>
+</div>
 
-
-
-
+<!-- ====================================================================== -->
 
 <h2>"When I commit, Git drops me to a scary editor with no on-screen help!
 	How do I get out?"</h2>
-<p>It's likely that your default text editor is set to some sort of
-	<code>vi</code> implementation.  To do your thing and get out,
-	follow these steps:
-	<ol>
-		<li>Press the <code>"i"</code> key.</li>
-		<li>Type your commit message.</li>
-		<li>Press the <code>esc</code> key.</li>
-		<li>Type "<code>:wq</code>" and press <code>enter</code>.</li>
-		<li>Tada!</li>
-	</ol>
-</p>
-<p>If you want Git to default to a more user-friendly text editor,
-	configure it to use your favorite.
-	<br/>For example:
-		<pre>$ git config --global core.editor nano</pre>
-		Or, if you want something more graphical:
-		<pre>$ git config --global core.editor gedit</pre>
-</p>
+<div>
+	<p>It's likely that your default text editor is set to some sort of
+		<code>vi</code> implementation.  To do your thing and get out,
+		follow these steps:
+		<ol>
+			<li>Press the <code>"i"</code> key.</li>
+			<li>Type your commit message.</li>
+			<li>Press the <code>esc</code> key.</li>
+			<li>Type "<code>:wq</code>" and press <code>enter</code>.</li>
+			<li>Tada!</li>
+		</ol>
+	</p>
+	<p>If you want Git to default to a more user-friendly text editor,
+		configure it to use your favorite.
+	</p>
+	<p>For example:</p>
+	<pre>	$ git config --global core.editor nano</pre>
+	<p>Or, if you want something more graphical:</p>
+	<pre>	$ git config --global core.editor gedit</pre>
+	</p>
+</div>
 
-
-
-
+<!-- ====================================================================== -->
 
 <h2>"I tried to commit, but I got <code>Aborting commit
 	due to empty commit message</code>.  Huh?"</h2>
-<p>When Git expected you to provide some sort of commit message,
-	ie: "Init commit", you probably made one of the following errors:
-	<ul>
-		<li>failed to enter anything</li>
-		<li>quit the text editor without saving</li>
-	</ul>
-</p>
-<p>The index and working directory have been left intact,
-	but you will have to repeat the <code>commit</code> operation.
-	This time, be sure to enter a commit message and save before quiting.
-</p>
+<div>
+	<p>When Git expected you to provide some sort of commit message,
+		ie: "Init commit", you probably made one of the following errors:
+		<ul>
+			<li>failed to enter anything</li>
+			<li>quit the text editor without saving</li>
+		</ul>
+	</p>
+	<p>The index and working directory have been left intact,
+		but you will have to repeat the <code>commit</code> operation.
+		This time, be sure to enter a commit message and save before quiting.
+	</p>
+</div>
 
-
-
-
+<!-- ====================================================================== -->
 
 <h2>"When I commit, Git complains <code>nothing to commit
 	(working directory clean)</code>.  What did I do wrong?"</h2>
-<p>This error indicates that none of the tracked files have been modified.
-	Make sure you've saved all of the files you've changed and called
-	<code>git add</code> on all of the files you want to include in the commit.
-</p>
+<div>
+	<p>This error indicates that none of the tracked files have been modified.
+		Make sure you've saved all of the files you've changed
+		and called <code>git add</code>
+		on all of the files you want to include in the commit.
+	</p>
+</div>
 
-
-
-
+<!-- ====================================================================== -->
 
 <h2>"I have a bunch of files in my directory that I don't want Git to track.
 	How do I make the annoying reminders stop?"</h2>
-<p>Luckily for you, Git has a built-in feature for this purpose!
-	If you have some files in your Git repository that you want to keep around
-	but do not want Git to track (or remind you about!),
-	you should create a <code>.gitignore</code> file.
-</p>
-<p>A <code>.gitignore</code> file specifies files that are intentionally
-	untracked and that Git should ignore.  (Note:  this does not apply to files that you already told Git to track.)
-	A <code>.gitignore</code> file should contain a set of <i>patterns</i>
-	that indicate the file paths that should not be tracked.
-</p>
-<p>For example, if you are working with Java, it is silly to track the
-	<code>.class</code> files that are created when you compile you code.
-	To make Git ignore these files,
-	we would first create the <code>.gitignore</code> file:
-	<pre>$ touch .gitignore</pre>
-	Within the new file, insert the following text, then save and quit:
-	<pre>*.class</pre>
-	This tells Git that, whenever a file path ends with <code>.class</code>,
-	that file should be ignored.
-</p>
-<p>To get more information and for additional examples, browse the
-	<a href="http://git-scm.com/docs/gitignore" target="_blank">gitignore Manual Page</a>.
-</p>
+<div>
+	<p>Luckily for you, Git has a built-in feature for this purpose!
+		If you have some files in your Git repository that you want to keep around
+		but do not want Git to track (or remind you about!),
+		you should create a <code>.gitignore</code> file.
+	</p>
+	<p>A <code>.gitignore</code> file specifies files that are intentionally
+		untracked and that Git should ignore.  (Note:  this does not apply to files that you already told Git to track.)
+		A <code>.gitignore</code> file should contain a set of <i>patterns</i>
+		that indicate the file paths that should not be tracked.
+	</p>
+	<p>For example, if you are working with Java, it is silly to track the
+		<code>.class</code> files that are created when you compile your code.
+		To make Git ignore these files,
+		we would first create the <code>.gitignore</code> file:
+	</p>
+	<pre>	$ touch .gitignore</pre>
+	<p>Within the new file, insert the following text, then save and quit:</p>
+	<pre>	*.class</pre>
+	<p>This tells Git that, whenever a file path ends with ".class",
+		it should be ignored.
+	</p>
+	<p>To get more information and for additional examples, browse the
+		<a href="http://git-scm.com/docs/gitignore" target="_blank">gitignore Manual Page</a>.
+	</p>
+</div>
 
-
-
-
+<!-- ====================================================================== -->
 
 </body>
 </html>
