@@ -1,5 +1,6 @@
 body{
-	margin: .5in;
+	margin-left: .5in;
+	margin-right: .5in;
 }
 
 div{
@@ -10,4 +11,19 @@ p{
 	/*background-color: red;*/
 	margin-left: 15px;
 	margin-right: 15px;
+}
+
+#topbar {
+	position: relative;
+}
+
+.barbutton {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+
+.barbutton a {
+	text-decoration: none;
+	text-align: center;
 }
