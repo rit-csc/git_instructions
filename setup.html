@@ -1,154 +1,200 @@
 <html>
 <head>
-<title>RIT CS Git Tutorial | Setting up a repository</title>
-<link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
-<link rel="stylesheet" type="text/css" href="custom.css">
+    <title>RIT CS Git Tutorial | Overview</title>
+    <link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
 </head>
-<body>
+<body style="padding-top:70px;">
+    
 
-<!-- header -->
-<div id="topbar">
-	<div class="barbutton">
-		<img height="40" src="Media/CSC_logo.PNG"/>
-	</div>
-	<div class="barbutton">
-		<a href="index.html">Home</a>
-	</div>
-	<div class="barbutton">
-		<a href="setup.html">Setup</a>
-	</div>
-	<div class="barbutton">
-		<a href="committing.html">Committing</a>
-	</div>
-	<div class="barbutton">
-		<a href="eclipse_setup.html">Eclipse and Git</a>
-	</div>
-	<div class="barbutton">
-		<a href="general.html">FAQ</a>
-	</div>
-	<div class="barbutton">
-		<img height="40" src="Media/git.png"/>
-	</div>
-</div>
-<!-- end header -->
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img height="30" src="Media/CSC_logo.PNG" /></a>
+                </div>
 
-<h1>Setting up a repository</h1>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="setup.html">Setup</a></li>
+                        <li><a href="committing.html">Committing</a></li>
+                        <li><a href="eclipse_setup.html">Eclipse and Git</a></li>
+                        <li><a href="general.html">FAQ</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><img height="30" src="Media/git.png" /></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="row">
+            <div class="col-sm-2 hidden-print">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="setup.html">Setup</a></li>
+                    <li><a href="committing.html">Committing</a></li>
+                    <li><a href="eclipse_setup.html">Eclipse and Git</a></li>
+                    <li><a href="general.html">FAQ</a></li>
+                </ul></div><!--Sidebar-->
+            <div class="col-sm-10">
+                <h1>Setting up a repository</h1>
+                <hr />
+                <!-- ====================================================================== -->
 
-<!-- ====================================================================== -->
+                <h2>Configuring your name and email</h2>
+                <div>
+                    <p>
+                        Before using Git on any system for the first time,
+                        it is a good idea to set your name and email address,
+                        since Git will include this information in each commit message you author.
+                        Follow these steps:
+                    </p>
+                    <ol>
+                        <li>
+                            Set your name by using this command:
+                            <pre>$ git config --global user.name "&lt;Your Name&gt;"</pre>
+                        </li>
+                        <li>
+                            Set your email as follows:
+                            <pre>$ git config --global user.email &lt;your_email_address&gt;</pre>
+                        </li>
+                    </ol>
+                </div>
 
-<h2>Configuring your name and email</h2>
-<div>
-	<p>Before using Git on any system for the first time,
-		it is a good idea to set your name and email address,
-		since Git will include this information in each commit message you author.
-		Follow these steps:
-	</p>
-	<ol>
-		<li>Set your name by using this command:
-			<pre>$ git config --global user.name "&lt;Your Name&gt;"</pre>
-		</li>
-		<li>Set your email as follows:
-			<pre>$ git config --global user.email &lt;your_email_address&gt;</pre>
-		</li>
-	</ol>
-</div>
+                <!-- ====================================================================== -->
 
-<!-- ====================================================================== -->
-
-<h2>If you plan to develop on the CS systems</h2>
-<div>
-	<p>If you intend to write your code on the department's systems
-		(e.g. while connected via SSH),
-		all you need to do is initialize a standard Git repository.
-		To do this, follow these steps.
-	</p>
-	<ol>
-		<li>Make sure you've set your name and email,
-			as detailed in the above section.
-			To check, look for this information in the output of the command:
-			<pre>$ git config --global -l</pre>
-		</li>
-		<li>Move into the folder where you keep your work for the course,
-			for example by running the command:
-			<pre>$ cd ~/Courses/CS/CS1/Labs</pre>
-		</li>
-		<li>Create a repository in a new folder of your choice.
-			For instance, to create one called <code>Lab1</code>, run:
-			<pre>$ git init Lab1</pre>
-		</li>
-		<li>This should result in a message being printed in the terminal, eg:
-			<pre>Initialized empty Git repository in ~/Courses/CS/CS1/Labs/Lab1/.git/</pre>
-			(Note: the exact path may differ based on your exact setup!!)
-		</li>
-		<li>On the offchance that this message was not printed,
-			there is another way to check whether your repository was successfully created.
-			To do this, navigate into the new directory and list its contents with the following series of commands:
-	<pre>$ cd Lab1
+                <h2>If you plan to develop on the CS systems</h2>
+                <hr />
+                <div>
+                    <p>
+                        If you intend to write your code on the department's systems
+                        (e.g. while connected via SSH),
+                        all you need to do is initialize a standard Git repository.
+                        To do this, follow these steps.
+                    </p>
+                    <ol>
+                        <li>
+                            Make sure you've set your name and email,
+                            as detailed in the above section.
+                            To check, look for this information in the output of the command:
+                            <pre>$ git config --global -l</pre>
+                        </li>
+                        <li>
+                            Move into the folder where you keep your work for the course,
+                            for example by running the command:
+                            <pre>$ cd ~/Courses/CS/CS1/Labs</pre>
+                        </li>
+                        <li>
+                            Create a repository in a new folder of your choice.
+                            For instance, to create one called <code>Lab1</code>, run:
+                            <pre>$ git init Lab1</pre>
+                        </li>
+                        <li>
+                            This should result in a message being printed in the terminal, eg:
+                            <pre>Initialized empty Git repository in ~/Courses/CS/CS1/Labs/Lab1/.git/</pre>
+                            (Note: the exact path may differ based on your exact setup!!)
+                        </li>
+                        <li>
+                            On the offchance that this message was not printed,
+                            there is another way to check whether your repository was successfully created.
+                            To do this, navigate into the new directory and list its contents with the following series of commands:
+                            <pre>$ cd Lab1
 $ ls -a</pre>
-			Now look for the hidden <code>.git</code> folder.
-			This folder identifies the directory as a Git repository.
-			If you see it, you know the <code>init</code> was successful!
-		</li>
-	</ol>
-</div>
+                            Now look for the hidden <code>.git</code> folder.
+                            This folder identifies the directory as a Git repository.
+                            If you see it, you know the <code>init</code> was successful!
+                        </li>
+                    </ol>
+                </div>
 
-<!-- ====================================================================== -->
+                <!-- ====================================================================== -->
 
-<h2>If you plan to develop on your own machine</h2>
-<div>
-	<p>If you intend to write your code on your own system,
-		you have to create an upstream on the CS systems
-		and clone it to a standard Git repository on your own machine.
-		This is done as follows:
-	</p>
-	<ol>
-		<li>Working on a CS department system,
-			move into the folder where you keep your work for the course,
-			for example by running the command:
-			<pre>$ cd ~/Courses/CS/CS1/Labs</pre>
-		</li>
-		<li>Create a bare repository in a new folder of your choice
-			(or use a repository that you have already created).
-			To create a bare repo called <code>Lab1.git</code>, run:
-			<pre>$ git init --bare Lab1.git</pre>
-		</li>
-		<li>This should result in a message being printed in the terminal, eg:
-			<pre>Initialized empty Git repository in ~/Courses/CS/CS1/Labs/Lab1.git/</pre>
-			(Note: the exact path may differ based on your exact setup!!)
-		</li>
-		<li>On your own system, download Git from the 
-			<a href="http://git-scm.com/downloads" target="_blank">project website</a> and install the package.
-		</li>
-		<li>If you're on a Windows system, locate and launch the newly-installed
-			"Git Bash" application;
-			otherwise, simply open a terminal (e.g. on Mac OS X, click the magnifying glass in the top right corner of the screen and type "Terminal").
-		</li>
-		<li>In the terminal on your own system,
-			move into the directory where you keep your coursework, for example:
-			<pre>$ cd ~/Courses/CS/CS1/Labs</pre>
-		</li>
-		<li>Clone the repository you created earlier on the CS systems.
-			To do this for an upstream you called Lab1.git,
-			run the following command and then enter your CS password:
-			<pre>$ git clone {your-username}@glados.cs.rit.edu:Courses/CS/CS1/Labs/Lab1</pre>
-		</li>
-		<li>This should result in a message being printed in the terminal, eg:
-			<pre>Cloning into 'Lab1'...</pre>
-		</li>
-		<li>On the offchance that this message was not printed,
-			there is another way to check whether your repository was successfully created.
-			To do this, navigate into the new directory and list its contents with the following series of commands:
-	<pre>$ cd Lab1
+                <h2>If you plan to develop on your own machine</h2>
+                <hr />
+                <div>
+                    <p>
+                        If you intend to write your code on your own system,
+                        you have to create an upstream on the CS systems
+                        and clone it to a standard Git repository on your own machine.
+                        This is done as follows:
+                    </p>
+                    <ol>
+                        <li>
+                            Working on a CS department system,
+                            move into the folder where you keep your work for the course,
+                            for example by running the command:
+                            <pre>$ cd ~/Courses/CS/CS1/Labs</pre>
+                        </li>
+                        <li>
+                            Create a bare repository in a new folder of your choice
+                            (or use a repository that you have already created).
+                            To create a bare repo called <code>Lab1.git</code>, run:
+                            <pre>$ git init --bare Lab1.git</pre>
+                        </li>
+                        <li>
+                            This should result in a message being printed in the terminal, eg:
+                            <pre>Initialized empty Git repository in ~/Courses/CS/CS1/Labs/Lab1.git/</pre>
+                            (Note: the exact path may differ based on your exact setup!!)
+                        </li>
+                        <li>
+                            On your own system, download Git from the
+                            <a href="http://git-scm.com/downloads" target="_blank">project website</a> and install the package.
+                        </li>
+                        <li>
+                            If you're on a Windows system, locate and launch the newly-installed
+                            "Git Bash" application;
+                            otherwise, simply open a terminal (e.g. on Mac OS X, click the magnifying glass in the top right corner of the screen and type "Terminal").
+                        </li>
+                        <li>
+                            In the terminal on your own system,
+                            move into the directory where you keep your coursework, for example:
+                            <pre>$ cd ~/Courses/CS/CS1/Labs</pre>
+                        </li>
+                        <li>
+                            Clone the repository you created earlier on the CS systems.
+                            To do this for an upstream you called Lab1.git,
+                            run the following command and then enter your CS password:
+                            <pre>$ git clone {your-username}@glados.cs.rit.edu:Courses/CS/CS1/Labs/Lab1</pre>
+                        </li>
+                        <li>
+                            This should result in a message being printed in the terminal, eg:
+                            <pre>Cloning into 'Lab1'...</pre>
+                        </li>
+                        <li>
+                            On the offchance that this message was not printed,
+                            there is another way to check whether your repository was successfully created.
+                            To do this, navigate into the new directory and list its contents with the following series of commands:
+                            <pre>$ cd Lab1
 $ ls -a</pre>
-		</li>
-		<li>Now look for the hidden <code>.git</code> folder.
-			This folder identifies the directory as a Git repository.
-			If you see it, that means the <code>clone</code> was successful!
-		</li>
-	</ol>
-</div>
+                        </li>
+                        <li>
+                            Now look for the hidden <code>.git</code> folder.
+                            This folder identifies the directory as a Git repository.
+                            If you see it, that means the <code>clone</code> was successful!
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="footer">
+            RIT Computer Science Community - Available on GitHub - 2014
+        </div>
+    </div>
 
-<!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
 
 </body>
 </html>
