@@ -1,133 +1,92 @@
-<html>
-<head>
-<title>RIT CS Git Tutorial | Overview</title>
-<link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
-<link rel="stylesheet" type="text/css" href="custom.css">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RIT CS Git Tutorial | Overview</title>
+    <link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+  </head>
 <body>
-
-<!-- header -->
-<div id="topbar">
-	<div class="barbutton">
-		<img height="40" src="Media/CSC_logo.PNG"/>
-	</div>
-	<div class="barbutton">
-		<a href="index.html">Home</a>
-	</div>
-	<div class="barbutton">
-		<a href="setup.html">Setup</a>
-	</div>
-	<div class="barbutton">
-		<a href="committing.html">Committing</a>
-	</div>
-	<div class="barbutton">
-		<a href="eclipse_setup.html">Eclipse and Git</a>
-	</div>
-	<div class="barbutton">
-		<a href="general.html">FAQ</a>
-	</div>
-	<div class="barbutton">
-		<img height="40" src="Media/git.png"/>
-	</div>
-</div>
-<!-- end header -->
-
-<h1>Introduction to Git</h1>
-
-<!-- ====================================================================== -->
-
-<h2>What is version control?</h2>
-<div>
-	<p>Version control is used to keep track of the changes made
-		on a set of files over time
-		(commonly known as "revisions" or "commits").
-		This is useful for recovering from accidentally deleted or broken code
-		and for collaborative coding in a team.
-		Git is a popular modern version control system that is used
-		by many free and open source software projects,
-		as well as numerous tech. companies.
-	</p>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>An overview of the Git repository</h2>
-<div>
-	<p>Each Git repository consists of a <code>.git</code> folder
-		and the working directory.
-		The <code>.git</code> folder contains a representation of
-		the version history and
-		is usually located inside the working directory.
-		The working directory contains the currently "checked-out" commit;
-		a staging area (also called the "index") where you collect changes
-		in preparation for creating a commit;
-		and a tree of commits, each of which represents
-		a set of related changes to the project.
-	</p>
-	<p>Each "change" (or commit) consists of a user-entered message
-		describing the changes that were made,
-		a representation of the changes themselves,
-		and a pointer to the previous commit(s).
-		In this way, Git creates a tree of commits that shows
-		the evolution of a project over time.
-	</p>
-	<p>
-		<img src="Media/working_staging_repositorying.png" alt="The working directory, staging area, and tree of commits"/><br/>
-		The working directory, staging area, and tree of commits.<br/>
-		(Image credit: <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics" target="_blank">Pro Git</a> by Scott Chacon)
-	</p>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>How is Git different than other version control systems?</h2>
-<div>
-	<p>Git is a distributed version control system,
-		which means that every developer's machine contains a complete copy of the repository;
-		thus, the entire history of the codebase is always stored locally.
-		This is in contrast to many older such sytems that only stored this information on one centralized server.
-	</p>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Regarding code hosting services and public repositories</h2>
-<div>
-	<p>There are many online services that offer Git repository hosting,
-		the most popular being GitHub and BitBucket.
-		For the sake of simplicity,
-		the CS department recommends that you store your code on department systems.
-		If, however, you decide to use a third-party service,
-		carefully ensure that your hosted repositories are <i>private</i>!
-		If you publish course code to a public repository,
-		you can be penalized for cheating pursuant to
-		<a href="http://www.rit.edu/academicaffairs/policiesmanual/sectionD/D8.html" target="_blank">RIT's Academic Integrity Policy</a>
-		and the <a href="http://www.cs.rit.edu/usr/local/pub/doc/DCS.honesty.final.html" target="_blank">department Policy on Academic Honesty</a>.
-	</p>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Let's get started!</h2>
-<div>
-	<p>Now that you have a general idea of what Git is
-		and what it can do, let's learn how to use it!
-	</p>
-	<p><u>Note:</u> it is good practice to keep your files for each
-		lab/project/hw assignment in its own distinct subdirectory
-		of the appropriate course directory.
-		This is wise for both organizational and version control-related reasons,
-		as you will see.
-	</p>
-	<ol>
-		<li><a href="setup.html">Setting up a repository</a></li>
-		<li><a href="committing.html">Committing your changes</a></li>
-		<li><a href="eclipse_setup.html">Git and Eclipse</a></li>
-		<li><a href="general.html">Frequently Asked Questions</a></li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-</body>
+  <!-- header -->
+  <div id="topbar">
+    <div class="barbutton">
+      <img height="40" src="Media/CSC_logo.PNG"/>
+    </div>
+    <div class="barbutton">
+      <a href="index.html">Home</a>
+    </div>
+    <div class="barbutton">
+      <a href="vocab.html">Vocab</a>
+    </div>
+    <div class="barbutton">
+      <a href="setup.html">Setup</a>
+    </div>
+    <div class="barbutton">
+      <a href="committing.html">Committing</a>
+    </div>
+    <div class="barbutton">
+      <a href="eclipse_setup.html">Eclipse and Git</a>
+    </div>
+    <div class="barbutton">
+      <a href="general.html">FAQ</a>
+    </div>
+    <div class="barbutton">
+      <img height="40" src="Media/git.png"/>
+    </div>
+  </div>
+  <!-- end header -->
+  
+  <h1>Introduction to Git</h1>
+  
+  <!-- ====================================================================== -->
+  <h2>General Notes</h2>
+  <div>
+    <p><i>This tutorial was written by RIT's Computer Science Community.</i></p>
+    <p>It is good practice to keep your files for each
+      lab/project/hw assignment in their own distinct subdirectory
+      of the appropriate course directory.
+      This is wise for both organizational and version control-related reasons,
+      as you will see.
+    </p>
+    <p>This tutorial makes use of the following topics,
+      understanding of which is recommended (not required):
+      <ul>
+        <li>
+          Navigation in the terminal
+          (ex: <code>cd</code>, <code>ls</code>, <code>pwd</code>)
+          <br/><i>To learn more: TODO:LINK</i>
+        </li>
+        <li>
+          I/O redirection
+          <br/><i>To learn more: TODO:LINK</i>
+        </li>
+        <li>
+          SSH and remote connections
+          (ex: TODO:EXAMPLES)
+          <br/><i>To learn more: TODO:LINK</i>
+        </li>
+      </ul>
+    </p>
+  </div>
+  
+  <!-- ====================================================================== -->
+  
+  <h2>Words of Warning!</h2>
+  <div>
+    <p>There are many online services that offer Git repository hosting,
+      the most popular being GitHub and BitBucket.
+      For the sake of simplicity,
+      the CS department recommends that you store your code on department systems.
+      If, however, you decide to use a third-party service,
+      carefully ensure that your hosted repositories are <i>private</i>!
+      If you publish course code to a public repository,
+      you can be penalized for cheating pursuant to
+      <a href="http://www.rit.edu/academicaffairs/policiesmanual/sectionD/D8.html" target="_blank">RIT's Academic Integrity Policy</a>
+      and the <a href="http://www.cs.rit.edu/usr/local/pub/doc/DCS.honesty.final.html" target="_blank">department Policy on Academic Honesty</a>.
+    </p>
+  </div>
+  
+  <!-- ====================================================================== -->
+  
+  </body>
 </html>
