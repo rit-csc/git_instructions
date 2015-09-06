@@ -1,124 +1,124 @@
-<html>
-<head>
-<title>RIT CS Git Tutorial | Committing your changes</title>
-<link rel="SHORTCUT ICON" href="Media/CSC_logo.ico">
-<link rel="stylesheet" type="text/css" href="custom.css">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RIT CS Git Tutorial | Committing your changes</title>
+    <link rel="shortcut icon" href="Media/CSC_logo.ico">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+  </head>
+  <body>
+    <!-- header -->
+    <div id="topbar">
+      <div class="barbutton">
+        <img height="40" src="Media/CSC_logo.PNG"/>
+      </div>
+      <div class="barbutton">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="barbutton">
+        <a href="vocab.html">Vocab</a>
+      </div>
+      <div class="barbutton">
+        <a href="setup.html">Setup</a>
+      </div>
+      <div class="barbutton">
+        <a href="committing.html">Committing</a>
+      </div>
+      <div class="barbutton">
+        <a href="eclipse_setup.html">Eclipse and Git</a>
+      </div>
+      <div class="barbutton">
+        <a href="general.html">FAQ</a>
+      </div>
+      <div class="barbutton">
+        <img height="40" src="Media/git.png"/>
+      </div>
+    </div>
+    <!-- end header -->
+    <h1>Committing your changes</h1>
 
-<!-- header -->
-<div id="topbar">
-	<div class="barbutton">
-		<img height="40" src="Media/CSC_logo.PNG"/>
-	</div>
-	<div class="barbutton">
-		<a href="index.html">Home</a>
-	</div>
-	<div class="barbutton">
-		<a href="vocab.html">Vocab</a>
-	</div>
-	<div class="barbutton">
-		<a href="setup.html">Setup</a>
-	</div>
-	<div class="barbutton">
-		<a href="committing.html">Committing</a>
-	</div>
-	<div class="barbutton">
-		<a href="eclipse_setup.html">Eclipse and Git</a>
-	</div>
-	<div class="barbutton">
-		<a href="general.html">FAQ</a>
-	</div>
-	<div class="barbutton">
-		<img height="40" src="Media/git.png"/>
-	</div>
-</div>
-<!-- end header -->
+    <!-- ====================================================================== -->
 
-<h1>Committing your changes</h1>
+    <div>
+      <p>Recall that the purpose of Git's index is to serve as a place
+        to put changes that are ready to be committed.
+        This page explores how to manipulate the index and
+        turn it into a commit once you're happy with its contents.
+      </p>
+      <p>
+        <img src="Media/working_with_the_stage.png" alt="Overview of working with the index"/>
+        <br/>Overview of working with the index
+        <br/>(Image credit: <a href="http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">Pro Git</a> by Scott Chacon)
+      </p>
+    </div>
 
-<!-- ====================================================================== -->
-
-<div>
-	<p>Recall that the purpose of Git's index is to serve as a place
-		to put changes that are ready to be committed.
-		This page explores how to manipulate the index and
-		turn it into a commit once you're happy with its contents.
-	</p>
-	<p>
-		<img src="Media/working_with_the_stage.png" alt="Overview of working with the index"/>
-		<br/>Overview of working with the index
-		<br/>(Image credit: <a href="http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">Pro Git</a> by Scott Chacon)
-	</p>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Querying status</h2>
-<!-- This section addresses the status command. -->
-<div>
-	<p>When using Git, if you are ever unsure of the state of
-		your working directory relative to the master branch,
-		the <code>status</code> command can be extremely informative.
-	</p>
-	<p>For example, at this point in the project, nothing has been done.
-		Let's do a small experiment to demonstrate the usefulness of the <code>status</code> command!
-	</p>
-	<ol>
-		<li>To create a file for our commit (in this case,
-			the generic file <code>file1.txt</code>), run:
-			<pre>$ touch file1.txt</pre>
-		</li>
-		<li>To ensure the file was successfully created, run:
-			<pre>$ ls</pre>
-			You should find <code>file1.txt</code> in the list of files.
-		</li>
-		<li>Now that we have a file for our first commit,
-			let's first check the status of our repo:
-			<pre>$ git status</pre> 
-		</li>
-		<li>This should yield the following output:
-	<pre># On branch master
+    <!-- ====================================================================== -->
+    
+    <h2>Querying status</h2>
+    <!-- This section addresses the status command. -->
+    <div>
+      <p>When using Git, if you are ever unsure of the state of
+        your working directory relative to the master branch,
+        the <code>status</code> command can be extremely informative.
+      </p>
+      <p>For example, at this point in the project, nothing has been done.
+        Let's do a small experiment to demonstrate the usefulness of the <code>status</code> command!
+      </p>
+      <ol>
+        <li>To create a file for our commit (in this case,
+          the generic file <code>file1.txt</code>), run:
+          <pre>$ touch file1.txt</pre>
+        </li>
+        <li>To ensure the file was successfully created, run:
+          <pre>$ ls</pre>
+          You should find <code>file1.txt</code> in the list of files.
+        </li>
+        <li>Now that we have a file for our first commit,
+          let's first check the status of our repo:
+          <pre>$ git status</pre> 
+        </li>
+        <li>This should yield the following output:
+      <pre># On branch master
 # 
 # Initial commit
 # 
 # Untracked files:
 # 	(use "git add &lt;file&gt;..." to include in what will be committed)
 # 
-# 		file1.txt
-nothing added to commit but untracked files present (use "git add" to track)
-</pre>
-		</li>
-		<li>Notice the <code>Untracked files</code> header:
-			it indicates that <code>file1.txt</code>'s history is not being tracked in our repository.
-			In order for such files to be included in our next commit,
-			we will have to learn how to stage/track files.
-		</li>
-	</ol>
-</div>
+# 	  file1.txt
+nothing added to commit but untracked files present (use "git add" to track)</pre>
+        </li>
+        <li>Notice the <code>Untracked files</code> header:
+          it indicates that <code>file1.txt</code>'s history is not being tracked in our repository.
+          In order for such files to be included in our next commit,
+          we will have to learn how to stage/track files.
+        </li>
+      </ol>
+    </div>
 
-<!-- ====================================================================== -->
+    <!-- ====================================================================== -->
 
-<h2>Tracking files</h2>
-<!--This section discusses adding new files to the index. -->
-<div>
-	<p>Before we can make any commits,
-		we need to tell Git which files we want to include.
-		To do this, for each file that we want to be version-controlled,
-		we must <code>add</code> it to the holding area for ready-to-commit files
-		(aka the "index" or staging area).
-	</p>
-	<ol>
-		<li>We want to commit our new file called <code>file1.txt</code>,
-			so let's add it to the commit!
-			You can do this with the following command:
-			<pre>$ git add file1.txt</pre>
-		</li>
-		<li>To check if it worked, we will use the <code>status</code> tool again:
-			<pre>$ git status</pre>
-		</li>
-		<li>This time, the output generated is different:
-	<pre># On branch master
+    <h2>Tracking files</h2>
+
+    <!--This section discusses adding new files to the index. -->
+    <div>
+      <p>Before we can make any commits,
+        we need to tell Git which files we want to include.
+        To do this, for each file that we want to be version-controlled,
+        we must <code>add</code> it to the holding area for ready-to-commit files
+        (aka the "index" or staging area).
+      </p>
+      <ol>
+        <li>We want to commit our new file called <code>file1.txt</code>,
+          so let's add it to the commit!
+          You can do this with the following command:
+          <pre>$ git add file1.txt</pre>
+        </li>
+        <li>To check if it worked, we will use the <code>status</code> tool again:
+          <pre>$ git status</pre>
+        </li>
+        <li>This time, the output generated is different:
+      <pre># On branch master
 # 
 # Initial commit
 # 
@@ -127,42 +127,42 @@ nothing added to commit but untracked files present (use "git add" to track)
 # 
 # 		new file:	file1.txt
 # </pre>
-		</li>
-		<li>Note that Git now sees our "newly-added" file.
-		</li>
-		<li>But wait!
-			I actually want to change the contents of <code>file1.txt</code>,
-			but I already added it to the commit!
-			We can fix this issue after we make the desired changes to the file,
-			simply by "updating" the version of the file that has already been added to the commit.
-		</li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Updating files</h2>
-<!-- This section discusses re-adding modified files prior to making a commit -->
-<div>
-	<p>When working with version-controlled files,
-		it is common to suddenly remember something you wanted to do to a file before committing it, but you already added it to the commit!
-		Worry not; this is a very easy fix.
-	</p>
-	<p>We want to make a slight change to <code>file1.txt</code>
-		and then make a commit with the most up-to-date version.
-	</p>
-	<ol>
-		<li>Open <code>file1.txt</code> in your favorite text editor,
-			and add some text of your choice.
-			Save the file and return to the terminal window.
-		</li>
-		<li>Now what? The <code>status</code> command can give us a hint:
-			<pre>$ git status</pre>
-		</li>
-		<li>Now we see that there are two different versions
-			of <code>file1.txt</code> that have not been committed:
-			the version in the stage (unchanged) and the one in our current working directory (changed).
-	<pre># On branch master
+        </li>
+        <li>Note that Git now sees our "newly-added" file.
+        </li>
+        <li>But wait!
+          I actually want to change the contents of <code>file1.txt</code>,
+          but I already added it to the commit!
+          We can fix this issue after we make the desired changes to the file,
+          simply by "updating" the version of the file that has already been added to the commit.
+        </li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Updating files</h2>
+    <!-- This section discusses re-adding modified files prior to making a commit -->
+    <div>
+      <p>When working with version-controlled files,
+        it is common to suddenly remember something you wanted to do to a file before committing it, but you already added it to the commit!
+        Worry not; this is a very easy fix.
+      </p>
+      <p>We want to make a slight change to <code>file1.txt</code>
+        and then make a commit with the most up-to-date version.
+      </p>
+      <ol>
+        <li>Open <code>file1.txt</code> in your favorite text editor,
+          and add some text of your choice.
+          Save the file and return to the terminal window.
+        </li>
+        <li>Now what? The <code>status</code> command can give us a hint:
+          <pre>$ git status</pre>
+        </li>
+        <li>Now we see that there are two different versions
+          of <code>file1.txt</code> that have not been committed:
+          the version in the stage (unchanged) and the one in our current working directory (changed).
+      <pre># On branch master
 # 
 # Initial commit
 # 
@@ -177,31 +177,31 @@ nothing added to commit but untracked files present (use "git add" to track)
 # 
 # 		modified:	file1.txt
 # </pre>
-		</li>
-		<li>We must decide whether we want to include these new changes in our next commit:
-			<ol type="a">
-				<li>If we do want to commit these changes with our earlier ones, we must update the version in the stage to reflect the new ones:
-					<ul>
-						<li>To re-add the file to the stage:
-							<pre>$ git add file1.txt</pre>
-						</li>
-					</ul>
-				</li>
-				<li>If we only want to commit the first set of changes we made, we should just skip re-adding the file.</li>
-				<li>If we no longer want the new changes at all, we can permanently discard them:
-					<ul>
-						<li>To discard the changes made to <code>file1.txt</code> after it was last added to the stage:
-							<pre>$ git checkout -- file1.txt</pre>
-						</li>
-					</ul>
-				</li>
-			</ol>
-		</li>
-		<li>Just to double check that everything is as it should be:
-			<pre>$ git status</pre>
-		</li>
-		<li>Observe the following output:
-	<pre># On branch master
+        </li>
+        <li>We must decide whether we want to include these new changes in our next commit:
+          <ol type="a">
+            <li>If we do want to commit these changes with our earlier ones, we must update the version in the stage to reflect the new ones:
+              <ul>
+                <li>To re-add the file to the stage:
+                  <pre>$ git add file1.txt</pre>
+                </li>
+              </ul>
+            </li>
+            <li>If we only want to commit the first set of changes we made, we should just skip re-adding the file.</li>
+            <li>If we no longer want the new changes at all, we can permanently discard them:
+              <ul>
+                <li>To discard the changes made to <code>file1.txt</code> after it was last added to the stage:
+                  <pre>$ git checkout -- file1.txt</pre>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>Just to double check that everything is as it should be:
+          <pre>$ git status</pre>
+        </li>
+        <li>Observe the following output:
+      <pre># On branch master
 # 
 # Initial commit
 # 
@@ -210,118 +210,118 @@ nothing added to commit but untracked files present (use "git add" to track)
 # 
 # 		new file:	file1.txt
 # </pre>
-		</li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Making commits</h2>
-<!-- This section discusses making commits -->
-<div>
-	<ol>
-		<li>We have already made sure that the stage accurately represents
-			everything that we want to include in our commit,
-			so we are ready to go.
-		</li>
-		<li>To make the commit, use the following command:
-			<pre>$ git commit</pre>
-		</li>
-		<li>If you are working in the terminal, you will automatically
-			be taken to your default text editor.
-			Enter the commit message "<code>init commit</code>",
-			save the file, and exit.
-		</li>
-		<li>The output produced will look something like this
-			(possibly with a few small deviations):
-	<pre>[master (root-commit) 949b9f1] init commit
- 1 file changed, 1 insertion(+)
- create mode 100644 file1.txt</pre>
-		</li>
-		<li>For the sake of knowledge, let's check our <code>status</code> again,
-			now that the commit is complete:
-			<pre>$ git status</pre>
-		</li>
-		<li>Observe the following output:
-	<pre># On branch master
+        </li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Making commits</h2>
+    <!-- This section discusses making commits -->
+    <div>
+      <ol>
+        <li>We have already made sure that the stage accurately represents
+          everything that we want to include in our commit,
+          so we are ready to go.
+        </li>
+        <li>To make the commit, use the following command:
+          <pre>$ git commit</pre>
+        </li>
+        <li>If you are working in the terminal, you will automatically
+          be taken to your default text editor.
+          Enter the commit message "<code>init commit</code>",
+          save the file, and exit.
+        </li>
+        <li>The output produced will look something like this
+          (possibly with a few small deviations):
+      <pre>[master (root-commit) 949b9f1] init commit
+1 file changed, 1 insertion(+)
+create mode 100644 file1.txt</pre>
+        </li>
+        <li>For the sake of knowledge, let's check our <code>status</code> again,
+          now that the commit is complete:
+          <pre>$ git status</pre>
+        </li>
+        <li>Observe the following output:
+      <pre># On branch master
 nothing to commit (working directory clean) </pre>
-		</li>
-		<li>Success!
-		</li>
-		<li><u>Note:</u> Now that we've created a commit,
-			we're at a good stopping point to leave the project and come back to it later.
-			Just after making a commit is also when we might submit our work for grading once we've finished an assignment.
-		</li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Renaming/Moving tracked files</h2>
-<!-- This section discusses renaming and moving tracked files. -->
-<div>
-	<p>Now that we have successfully made a commit, what happens if we need to <b>rename</b> a tracked file?</p>
-	<ol>
-		<li>To find out, let's rename our <code>file1.txt</code> file
-			to the more descriptive name <code>readme.txt</code>:
-			<pre>$ git mv file1.txt readme.txt</pre>
-		</li>
-		<li>Now check the <code>status</code> again:
-			<pre>$ git status</pre>
-		</li>
-		<li>Observe the following output:
-	<pre># On branch master
+        </li>
+        <li>Success!
+        </li>
+        <li><u>Note:</u> Now that we've created a commit,
+          we're at a good stopping point to leave the project and come back to it later.
+          Just after making a commit is also when we might submit our work for grading once we've finished an assignment.
+        </li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Renaming/Moving tracked files</h2>
+    <!-- This section discusses renaming and moving tracked files. -->
+    <div>
+      <p>Now that we have successfully made a commit, what happens if we need to <b>rename</b> a tracked file?</p>
+      <ol>
+        <li>To find out, let's rename our <code>file1.txt</code> file
+          to the more descriptive name <code>readme.txt</code>:
+          <pre>$ git mv file1.txt readme.txt</pre>
+        </li>
+        <li>Now check the <code>status</code> again:
+          <pre>$ git status</pre>
+        </li>
+        <li>Observe the following output:
+      <pre># On branch master
 # Changes to be committed:
 # 	(use "git reset HEAD &lt;file&gt;..." to unstage)
 #
 # 		renamed:	file1.txt -> readme.txt
 # </pre>
-		</li>
-	</ol>
-	<p>
-		If you simply relocate a file within your repository,
-		you can use the <code>mv</code> command to update Git in the same way.
-	</p>
-	<ol>
-		<li>For example, let's move our <code>readme.txt</code> into
-			a new directory called <code>documentation</code>:
-	<pre>$ mkdir documentation
+        </li>
+      </ol>
+      <p>
+        If you simply relocate a file within your repository,
+        you can use the <code>mv</code> command to update Git in the same way.
+      </p>
+      <ol>
+        <li>For example, let's move our <code>readme.txt</code> into
+          a new directory called <code>documentation</code>:
+      <pre>$ mkdir documentation
 $ git mv readme.txt documentation/readme.txt</pre>
-		</li>
-		<li>Now check the <code>status</code> again:
-			<pre>$ git status</pre>
-		</li>
-		<li>Observe the following output:
-	<pre># On branch master
+        </li>
+        <li>Now check the <code>status</code> again:
+          <pre>$ git status</pre>
+        </li>
+        <li>Observe the following output:
+      <pre># On branch master
 # Changes to be committed:
 # 	(use "git reset HEAD &lt;file&gt;..." to unstage)
 #
 # 		renamed:	file1.txt -> documentation/readme.txt
 # </pre>
-		</li>
-		<li>Note that Git understood that the two changes were referencing
-			the same original file, <code>file1.txt</code>.</li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Removing tracked files</h2>
-<!-- This section discusses removing/deleting tracked files. -->
-<div>
-	<p>
-		It turns out that we do not need our <code>readme.txt</code> file after all.
-		We want to delete our working copy, and <i>also</i> tell Git that we deleted it.  To accomplish this, we will use the <code>rm</code> command.
-	</p>
-	<ol>
-		<li>First things first: we need to delete the <code>readme.txt</code> file:
-			<pre>$ rm documentation/readme.txt</pre>
-		</li>
-		<li>Now check the <code>status</code> to see what happens:
-			<pre>$ git status</pre>
-		</li>
-		<li>Observe the following output:
-	<pre># On branch master
+        </li>
+        <li>Note that Git understood that the two changes were referencing
+          the same original file, <code>file1.txt</code>.</li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Removing tracked files</h2>
+    <!-- This section discusses removing/deleting tracked files. -->
+    <div>
+      <p>
+        It turns out that we do not need our <code>readme.txt</code> file after all.
+        We want to delete our working copy, and <i>also</i> tell Git that we deleted it.  To accomplish this, we will use the <code>rm</code> command.
+      </p>
+      <ol>
+        <li>First things first: we need to delete the <code>readme.txt</code> file:
+          <pre>$ rm documentation/readme.txt</pre>
+        </li>
+        <li>Now check the <code>status</code> to see what happens:
+          <pre>$ git status</pre>
+        </li>
+        <li>Observe the following output:
+      <pre># On branch master
 # Changes to be committed:
 # 	(use "git reset HEAD &lt;file&gt;..." to unstage)
 #
@@ -333,144 +333,147 @@ $ git mv readme.txt documentation/readme.txt</pre>
 #
 #		deleted:	documentation/readme.txt
 # </pre>
-		</li>
-		<li>To make sure the deletion is included in our next commit,
-			follow the directions from the output:
-			<pre>$ git rm documentation/readme.txt</pre>
-		</li>
-		<li>This should result in the following output:
-			<pre>rm 'documentation/readme.txt'</pre>
-		</li>
-		<li>Now check the <code>status</code> again:
-			<pre>$ git status</pre>
-		</li>
-		<li>The output shows that the file has been successfully deleted
-			and is no longer being tracked:
-	<pre># On branch master
+        </li>
+        <li>To make sure the deletion is included in our next commit,
+          follow the directions from the output:
+          <pre>$ git rm documentation/readme.txt</pre>
+        </li>
+        <li>This should result in the following output:
+          <pre>rm 'documentation/readme.txt'</pre>
+        </li>
+        <li>Now check the <code>status</code> again:
+          <pre>$ git status</pre>
+        </li>
+        <li>The output shows that the file has been successfully deleted
+          and is no longer being tracked:
+      <pre># On branch master
 # Changes to be committed:
 # 	(use "git reset HEAD &lt;file&gt;..." to unstage)
 #
 # 		deleted:	file1.txt
 # </pre>
-		</li>
-		<li>Note that when the file was deleted, any other uncommitted changes
-			to that file were also discarded.  (In this example, the fact that we renamed and move the original <code>file1.txt</code> no longer matters.)</li>
-	</ol>
-</div>
+        </li>
+        <li>Note that when the file was deleted, any other uncommitted changes
+          to that file were also discarded.  (In this example, the fact that we renamed and move the original <code>file1.txt</code> no longer matters.)</li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Viewing your commit history</h2>
+    <!-- This section discusses the use of git log -->
+    <div>
+      <p>If at any point in the progression of your project,
+        you want to take a look at a history of all of your commits so far,
+        Git has the perfect tool for you!
+      </p>
+      <ul>
+        <li>To briefly list all past commits
+          (including corresponding commit messages)
+          right there in the terminal window:
+          <ol>
+            <li>Issue the following command and enjoy:
+              <pre>$ git log --oneline</pre>
+            </li>
+            <li>For example, after the above commit,
+              a log following this format would be displayed:
+              <pre>949b9f1 init commit</pre>
+            </li>
+            <li>If your log output is longer than the terminal window,
+              you will need to press the "q" key to return to the command line.
+            </li>
+          </ol>
+        </li>
+        <li>If your professor wants proof that you used version control
+          (and allows the use of Git),
+          you can redirect the verbose commit log into a file to optionally include in the submission of your work for grading.
+          <ol>
+            <li>For example, to save your commit history in a file
+              called <code>log_file.txt</code>, use the following command:
+              <pre>$ git log &gt; log_file.txt</pre>
+            </li>
+            <li>If you open this file in your preferred text editor,
+              you'll see that all past commits
+              (including corresponding commit messages)
+              are now documented.
+            </li>
+          </ol>
+        </li>
+          
+      </ul>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Exploring old versions</h2>
+    <!-- This section addresses checking out trees -->
+    <div>
+      <p>Sometimes it's helpful to experiment
+        with an older version of your codebase,
+        either for nostalgia or because
+        you're trying to determine when you introduced a bug.
+        This is where the <code>checkout</code> tool comes in handy.
+      </p>
+      <ol>
+        <li>First, check your <code>status</code>
+          to ensure you do not have any uncommitted changes:
+          <pre>$ git status</pre>
+          If you do, commit them before continuing.
+        </li>
+        <li>Examine the output of your most recent <code>log</code>
+          (see the previous section for more details)
+          and find the hash of the commit you want to work with.
+        </li>
+        <li>Checkout the version of the code corresponding to the hash value
+          <code>&lt;hash&gt;</code>:
+          <pre>$ git checkout &lt;hash&gt;</pre>
+        </li>
+        <li>Read, build, and experiment with this older version of your code,
+          but <i>DO NOT</i> make changes you want to keep
+          or attempt to commit anything.
+        </li>
+        <li>Once you're ready to return to the latest version of your code,
+          execute this command:
+          <pre>$ git checkout master</pre>
+        </li>
+      </ol>
+    </div>
+    
+    <!-- ====================================================================== -->
+    
+    <h2>Viewing diffs</h2>
+    <!-- This section discusses all sorts of useful diff commands -->
+    <div>
+      <p>If you ever reach a point where you would like to see the differences 
+        between two different states of your repository,
+        the <code>diff</code> tool can be quite useful. One important
+        thing to note is that the <code>&lt;path&gt;</code> parameter can be either
+        a path to a specific file, or an entire directory. Specifying a directory
+        allowed you to get the diff for all files under that directory.
+      </p>
+      <ul>
+        <li>To view the differences between your working directory
+          and the <code>HEAD</code>, run the following:
+              <pre>$ git diff &lt;path&gt;</pre>
+          </li>
+        <li>To view the differences between the changes you have staged
+          and some arbitrary commit, run the following:
+              <pre>$ git diff --cached &lt;commit&gt; &lt;path&gt;</pre>
+              Note:  In this situation, the &lt;commit&gt; argument is optional.
+              If you do not include it, the command will use the currently checked-out
+          commit as the basis for comparison, by default.
+          </li>
+          <li>To view the differences between your working directory
+            and some arbitrary commit, run the following:
+              <pre>$ git diff &lt;commit&gt; &lt;path&gt;</pre>
+          </li>
+          <li>To view the differences between two arbitrary commits, run the following
+              <pre>$ git diff &lt;commit1&gt; &lt;commit2&gt; &lt;path&gt;</pre>
+          </li>
+      </ul>
+    </div>
 
-<!-- ====================================================================== -->
+    <!-- ====================================================================== -->
 
-<h2>Viewing your commit history</h2>
-<!-- This section discusses the use of git log -->
-<div>
-	<p>If at any point in the progression of your project,
-		you want to take a look at a history of all of your commits so far,
-		Git has the perfect tool for you!
-	</p>
-	<ul>
-		<li>To briefly list all past commits
-			(including corresponding commit messages)
-			right there in the terminal window:
-			<ol>
-				<li>Issue the following command and enjoy:
-					<pre>$ git log --oneline</pre>
-				</li>
-				<li>For example, after the above commit,
-					a log following this format would be displayed:
-					<pre>949b9f1 init commit</pre>
-				</li>
-				<li>If your log output is longer than the terminal window,
-					you will need to press the "q" key to return to the command line.
-				</li>
-			</ol>
-		</li>
-		<li>If your professor wants proof that you used version control
-			(and allows the use of Git),
-			you can redirect the verbose commit log into a file to optionally include in the submission of your work for grading.
-			<ol>
-				<li>For example, to save your commit history in a file
-					called <code>log_file.txt</code>, use the following command:
-					<pre>$ git log &gt; log_file.txt</pre>
-				</li>
-				<li>If you open this file in your preferred text editor,
-					you'll see that all past commits
-					(including corresponding commit messages)
-					are now documented.
-				</li>
-			</ol>
-		</li>
-			
-	</ul>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Exploring old versions</h2>
-<!-- This section addresses checking out trees -->
-<div>
-	<p>Sometimes it's helpful to experiment
-		with an older version of your codebase,
-		either for nostalgia or because
-		you're trying to determine when you introduced a bug.
-		This is where the <code>checkout</code> tool comes in handy.
-	</p>
-	<ol>
-		<li>First, check your <code>status</code>
-			to ensure you do not have any uncommitted changes:
-			<pre>$ git status</pre>
-			If you do, commit them before continuing.
-		</li>
-		<li>Examine the output of your most recent <code>log</code>
-			(see the previous section for more details)
-			and find the hash of the commit you want to work with.
-		</li>
-		<li>Checkout the version of the code corresponding to the hash value
-			<code>&lt;hash&gt;</code>:
-			<pre>$ git checkout &lt;hash&gt;</pre>
-		</li>
-		<li>Read, build, and experiment with this older version of your code,
-			but <i>DO NOT</i> make changes you want to keep
-			or attempt to commit anything.
-		</li>
-		<li>Once you're ready to return to the latest version of your code,
-			execute this command:
-			<pre>$ git checkout master</pre>
-		</li>
-	</ol>
-</div>
-
-<!-- ====================================================================== -->
-
-<h2>Viewing diffs</h2>
-<!-- This section discusses all sorts of useful diff commands -->
-<div>
-	<p>If you ever reach a point where you would like to see the differences 
-		between two different states of your repository,
-		the <code>diff</code> tool can be quite useful.
-	</p>
-	<ul>
-		<li>To view the differences between your working directory
-			and the <code>HEAD</code>, run the following:
-	        <pre>$ git diff /path/to/filename</pre>
-	    </li>
-		<li>To view the differences between the changes you have staged
-			and some arbitrary commit, run the following:
-	        <pre>$ git diff --cached &lt;commit&gt; /path/to/filename</pre>
-	        Note:  In this situation, the &lt;commit&gt; argument is optional.
-	        If you do not include it, the command will use the currently&ndash;checked out
-			commit as the basis for comparison, by default.
-	    </li>
-	    <li>To view the differences between your working directory
-	    	and some arbitrary commit, run the following:
-	        <pre>$ git diff &lt;commit&gt; /path/to/filename</pre>
-	    </li>
-	    <li>To view the differences between two arbitrary commits, run the following
-	        <pre>$ git diff &lt;commit1&gt; &lt;commit2&gt; /path/to/filename</pre>
-	    </li>
-	</ul>
-</div>
-
-<!-- ====================================================================== -->
-
-</body>
+  </body>
 </html>
